@@ -60,5 +60,14 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArrestModels\" />
+    <Folder Include="ConvictionModels\" />
+    <Folder Include="CourtHearingModels\" />
+    <Folder Include="DefendantModels\" />
+    <Folder Include="DefenseAttorneyModels\" />
+    <Folder Include="OfficerModels\" />
+    <Folder Include="StateAttorneyModels\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
