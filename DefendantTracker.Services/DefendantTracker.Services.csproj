@@ -54,7 +54,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrestService.cs" />
+    <Compile Include="ConvictionService.cs" />
+    <Compile Include="CourtHearingService.cs" />
+    <Compile Include="DefendantService.cs" />
+    <Compile Include="DefenseAttroneyService.cs" />
+    <Compile Include="OfficerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateAttorneyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

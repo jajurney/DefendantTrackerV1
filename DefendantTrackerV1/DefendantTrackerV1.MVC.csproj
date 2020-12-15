@@ -168,9 +168,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArrestController.cs" />
+    <Compile Include="Controllers\ConvictionController.cs" />
+    <Compile Include="Controllers\CourtHearingController.cs" />
     <Compile Include="Controllers\DefendantController.cs" />
+    <Compile Include="Controllers\DefenseAttorneyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OfficerController.cs" />
+    <Compile Include="Controllers\StateAttorneyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,7 +244,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Arrest\" />
+    <Folder Include="Views\Conviction\" />
+    <Folder Include="Views\CourtHearing\" />
     <Folder Include="Views\Defendant\" />
+    <Folder Include="Views\DefenseAttorney\" />
+    <Folder Include="Views\Defense\" />
+    <Folder Include="Views\Officer\" />
+    <Folder Include="Views\StateAttorney\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
