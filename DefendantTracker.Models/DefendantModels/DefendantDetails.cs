@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DefendantTracker.Data
+namespace DefendantTracker.Models.DefendantModels
 {
-    public class Defendant
+    public class DefendantDetails
     {
-        [Key]
-        public Guid DefendantID { get; set; }
+        public int DefendantID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -45,15 +43,6 @@ namespace DefendantTracker.Data
             set { }
         }
         public bool Prosecuted { get; set; }
-        public bool Arrested { get; set; }
-        // [ForeignKey(nameof(StateAttorneyID))]
-        // public virtual StateAttorney StateAttorney { get; set; }
-        // [ForeignKey(nameof(DefenseAttorneyID))]
-        // public virtual DefenseAttorney DefenseAttorney { get; set; }
-        // [ForeignKey(nameof(OfficerID))]
-        // public virtual Officer Officer { get; set; }
-        // public List<CourtHearing> CourtHearings { get; set; } = new List<CourtHearing>();
-        //public List<Conviction> Convictions { get; set; } = new List<Conviction>();
-        //public List<Arrest> Arrests { get; set; } = new List<Arrest>();
+        public bool Arested { get; set; }
     }
 }

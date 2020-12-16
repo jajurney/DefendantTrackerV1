@@ -54,20 +54,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrestModels\ArrestCreate.cs" />
+    <Compile Include="ArrestModels\ArrestDetails.cs" />
+    <Compile Include="ArrestModels\ArrestEdit.cs" />
+    <Compile Include="ArrestModels\ArrestListItem.cs" />
+    <Compile Include="ConvictionModels\ConvictionEdit.cs" />
+    <Compile Include="ConvictionModels\ConvictionCreate.cs" />
+    <Compile Include="ConvictionModels\ConvictionDetails.cs" />
+    <Compile Include="ConvictionModels\ConvictionListItem.cs" />
+    <Compile Include="CourtHearingModels\ConvictionEdit.cs" />
+    <Compile Include="CourtHearingModels\ConvictionListItem.cs" />
+    <Compile Include="CourtHearingModels\CourtHearingCreate.cs" />
+    <Compile Include="CourtHearingModels\CourtHearingDetails.cs" />
+    <Compile Include="DefendantModels\DefendantCreate.cs" />
+    <Compile Include="DefendantModels\DefendantDetails.cs" />
+    <Compile Include="DefendantModels\DefendantEdit.cs" />
+    <Compile Include="DefendantModels\DefendantListItem.cs" />
+    <Compile Include="DefenseAttorneyModels\DefenseAttorneyCreate.cs" />
+    <Compile Include="DefenseAttorneyModels\DefenseAttorneyDetials.cs" />
+    <Compile Include="DefenseAttorneyModels\DefenseAttorneyEdit.cs" />
+    <Compile Include="DefenseAttorneyModels\DefenseAttorneyListItem.cs" />
+    <Compile Include="OfficerModels\OfficerCreate.cs" />
+    <Compile Include="OfficerModels\OfficerDetails.cs" />
+    <Compile Include="OfficerModels\OfficerEdit.cs" />
+    <Compile Include="OfficerModels\OfficerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateAttorneyModels\StateAttorneyCreate.cs" />
+    <Compile Include="StateAttorneyModels\StateAttorneyDetails.cs" />
+    <Compile Include="StateAttorneyModels\StateAttorneyEdit.cs" />
+    <Compile Include="StateAttorneyModels\StateAttorneyListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ArrestModels\" />
-    <Folder Include="ConvictionModels\" />
-    <Folder Include="CourtHearingModels\" />
-    <Folder Include="DefendantModels\" />
-    <Folder Include="DefenseAttorneyModels\" />
-    <Folder Include="OfficerModels\" />
-    <Folder Include="StateAttorneyModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -241,13 +241,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Defendant\Index.cshtml" />
+    <Content Include="Views\Defendant\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Arrest\" />
     <Folder Include="Views\Conviction\" />
     <Folder Include="Views\CourtHearing\" />
-    <Folder Include="Views\Defendant\" />
     <Folder Include="Views\DefenseAttorney\" />
     <Folder Include="Views\Defense\" />
     <Folder Include="Views\Officer\" />
