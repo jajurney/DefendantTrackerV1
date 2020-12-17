@@ -62,5 +62,50 @@ namespace DefendantTracker.Services
                 return query.ToArray();
             }
         }
+        public DefendantDetails GetDefendantById(Guid id)
+        {
+            using (var dft = new ApplicationDbContext())
+            {
+                var entity = dft
+                    .Defendants
+                    .Single(e => e.DefendantID == _defendantID);
+                return
+                    new DefendantDetails
+                    {
+                        DefendantID= _defendantID,
+                        FirstName= entity.FirstName,
+                        LastName = entity.LastName,
+                        FullName = entity.FullName,
+                        StreetAddress = entity.StreetAddress,
+                        City = entity.City,
+                        County = entity.County,
+                        State = entity.State,
+                        Zipcode = entity.Zipcode,
+                        FullLocation = entity.FullLocation,
+                        Arrested = entity.Arrested,
+                        Prosecuted = entity.Prosecuted
+                    };
+            }
+        }
+        public bool UpdateDefendant(DefendantEdit model)
+        {
+            using(var dft = new ApplicationDbContext())
+            {
+                var entity =
+                    dft
+                    .Defendants
+                    .Single(e => e.DefendantID == _defendantID);
+                entity.FirstName = model.FirstName;
+                entity.LastName = model.LastName;
+                entity.StreetAddress = model.StreetAddress;
+                entity.City = model.City;
+                entity.County = model.County;
+                entity.State = model.State;
+                entity.Zipcode = model.Zipcode;
+                entity.Arrested = model.Arrested;
+                entity.Prosecuted = model.Prosecuted;
+                return dft.SaveChanges() == 1;
+            }
+        }
     }
 }

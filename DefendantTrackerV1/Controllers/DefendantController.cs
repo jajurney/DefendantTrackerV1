@@ -30,14 +30,62 @@ namespace DefendantTrackerV1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DefendantCreate model)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateDefendantService();
+            if (service.CreateDefendant(model))
             {
-                return View(model);
+                TempData["SaveResult"] = "Defendant was Created";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Defendant was not Created");
+            return View(model);
+        }
+        public ActionResult Details(Guid id)
+        {
+            var dft = CreateDefendantService();
+            var model = dft.GetDefendantById(id);
+            return View(model);
+        }
+        public ActionResult Edit(Guid id)
+        {
+            var service = CreateDefendantService();
+            var detail = service.GetDefendantById(id);
+            var model = new DefendantEdit
+            {
+                FirstName = detail.FirstName,
+                LastName = detail.LastName,
+                StreetAddress = detail.StreetAddress,
+                City = detail.City,
+                County = detail.County,
+                State = detail.State,
+                Zipcode = detail.Zipcode,
+                Arrested = detail.Arrested,
+                Prosecuted = detail.Prosecuted,
+            };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(Guid id, DefendantEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+           
+            var service = CreateDefendantService();
+            if (service.UpdateDefendant(model))
+            {
+                TempData["SaveResult"] = "Defendant Updated";
+                return RedirectToAction("Index");
             }
+            ModelState.AddModelError("", "Defendant not Updated");
+            return View(model);
+        }
+        private DefendantService CreateDefendantService()
+        {
             var defendantID = Guid.Parse(User.Identity.GetUserId());
             var service = new DefendantService(defendantID);
-            service.CreateDefendant(model);
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }

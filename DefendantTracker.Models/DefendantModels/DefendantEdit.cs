@@ -16,7 +16,7 @@ namespace DefendantTracker.Models.DefendantModels
         public string County { get; set; }
         public string State { get; set; }
         public int Zipcode { get; set; }
+        public bool Arrested { get; set; }
         public bool Prosecuted { get; set; }
-        public bool Arested { get; set; }
     }
 }

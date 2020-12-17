@@ -8,13 +8,10 @@ using System.Threading.Tasks;
 namespace DefendantTracker.Models.DefendantModels
 {
     public class DefendantDetails
-    {
-        public int DefendantID { get; set; }
-        [Required]
+    { 
+        public Guid DefendantID { get; set; }
         public string FirstName { get; set; }
-        [Required]
         public string LastName { get; set; }
-        [Required]
         public string FullName
         {
             get
@@ -23,17 +20,11 @@ namespace DefendantTracker.Models.DefendantModels
             }
             set { }
         }
-        [Required]
         public string StreetAddress { get; set; }
-        [Required]
         public string City { get; set; }
-        [Required]
         public string County { get; set; }
-        [Required]
         public string State { get; set; }
-        [Required]
         public int Zipcode { get; set; }
-        [Required]
         public string FullLocation
         {
             get
@@ -43,6 +34,6 @@ namespace DefendantTracker.Models.DefendantModels
             set { }
         }
         public bool Prosecuted { get; set; }
-        public bool Arested { get; set; }
+        public bool Arrested { get; set; }
     }
 }
