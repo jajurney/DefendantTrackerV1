@@ -30,17 +30,17 @@ namespace DefendantTracker.Services
                 Prosecuted = model.Prosecuted,
                 Arrested = model.Arrested
             };
-            using (var ctx = new ApplicationDbContext())
+            using (var dft = new ApplicationDbContext())
             {
-                ctx.Defendants.Add(entity);
-                return ctx.SaveChanges() == 1;
+                dft.Defendants.Add(entity);
+                return dft.SaveChanges() == 1;
             }
         }
         public IEnumerable<DefendantListItem> GetDefendants()
         {
-            using (var ctx = new ApplicationDbContext())
+            using (var dft = new ApplicationDbContext())
             {
-                var query = ctx
+                var query = dft
                         .Defendants
                         .Where(e => e.DefendantID == _defendantID)
                         .Select(
@@ -104,6 +104,18 @@ namespace DefendantTracker.Services
                 entity.Zipcode = model.Zipcode;
                 entity.Arrested = model.Arrested;
                 entity.Prosecuted = model.Prosecuted;
+                return dft.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteDefendant(Guid id)
+        {
+            using (var dft = new ApplicationDbContext())
+            {
+                var entity =
+                    dft
+                        .Defendants
+                        .Single(e => e.DefendantID == _defendantID);
+                dft.Defendants.Remove(entity);
                 return dft.SaveChanges() == 1;
             }
         }

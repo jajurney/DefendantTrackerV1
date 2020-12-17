@@ -81,6 +81,23 @@ namespace DefendantTrackerV1.Controllers
             ModelState.AddModelError("", "Defendant not Updated");
             return View(model);
         }
+        [ActionName("Delete")]
+        public ActionResult Delete(Guid id)
+        {
+            var dft = CreateDefendantService();
+            var model = dft.GetDefendantById(id);
+            return View(model);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDefendant(Guid id)
+        {
+            var service = CreateDefendantService();
+            service.DeleteDefendant(id);
+            TempData["SaveResult"] = "Defedant was removed.";
+            return RedirectToAction("Index");
+        }
         private DefendantService CreateDefendantService()
         {
             var defendantID = Guid.Parse(User.Identity.GetUserId());
