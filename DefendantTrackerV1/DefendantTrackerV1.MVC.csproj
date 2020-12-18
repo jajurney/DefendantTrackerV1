@@ -246,6 +246,11 @@
     <Content Include="Views\Defendant\Edit.cshtml" />
     <Content Include="Views\Defendant\Delete.cshtml" />
     <Content Include="Views\Defendant\Index.cshtml" />
+    <Content Include="Views\Officer\Index.cshtml" />
+    <Content Include="Views\Officer\Create.cshtml" />
+    <Content Include="Views\Officer\Details.cshtml" />
+    <Content Include="Views\Officer\Edit.cshtml" />
+    <Content Include="Views\Officer\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,7 +259,6 @@
     <Folder Include="Views\CourtHearing\" />
     <Folder Include="Views\DefenseAttorney\" />
     <Folder Include="Views\Defense\" />
-    <Folder Include="Views\Officer\" />
     <Folder Include="Views\StateAttorney\" />
   </ItemGroup>
   <ItemGroup>

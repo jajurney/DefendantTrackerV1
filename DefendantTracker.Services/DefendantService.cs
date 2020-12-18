@@ -72,8 +72,8 @@ namespace DefendantTracker.Services
                 return
                     new DefendantDetails
                     {
-                        DefendantID= _defendantID,
-                        FirstName= entity.FirstName,
+                        DefendantID = _defendantID,
+                        FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         FullName = entity.FullName,
                         StreetAddress = entity.StreetAddress,
@@ -89,7 +89,7 @@ namespace DefendantTracker.Services
         }
         public bool UpdateDefendant(DefendantEdit model)
         {
-            using(var dft = new ApplicationDbContext())
+            using (var dft = new ApplicationDbContext())
             {
                 var entity =
                     dft

@@ -1,0 +1,98 @@
+﻿@model DefendantTracker.Models.OfficerModels.OfficerDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OfficerDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficerID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentCounty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentCounty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentZipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentZipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartmentName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OfficerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
