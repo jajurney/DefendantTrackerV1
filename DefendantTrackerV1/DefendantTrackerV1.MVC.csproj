@@ -251,10 +251,14 @@
     <Content Include="Views\Officer\Details.cshtml" />
     <Content Include="Views\Officer\Edit.cshtml" />
     <Content Include="Views\Officer\Delete.cshtml" />
+    <Content Include="Views\Arrest\Index.cshtml" />
+    <Content Include="Views\Arrest\Create.cshtml" />
+    <Content Include="Views\Arrest\Details.cshtml" />
+    <Content Include="Views\Arrest\Edit.cshtml" />
+    <Content Include="Views\Arrest\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Arrest\" />
     <Folder Include="Views\Conviction\" />
     <Folder Include="Views\CourtHearing\" />
     <Folder Include="Views\DefenseAttorney\" />

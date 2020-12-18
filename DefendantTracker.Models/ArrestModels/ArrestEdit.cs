@@ -14,5 +14,6 @@ namespace DefendantTracker.Models.ArrestModels
         public string ArrestCounty { get; set; }
         public string ArrestState { get; set; }
         public int ArrestZipcode { get; set; }
+        public string ArrestDesc { get; set; }
     }
 }
