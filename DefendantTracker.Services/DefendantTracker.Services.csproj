@@ -58,7 +58,7 @@
     <Compile Include="ConvictionService.cs" />
     <Compile Include="CourtHearingService.cs" />
     <Compile Include="DefendantService.cs" />
-    <Compile Include="DefenseAttroneyService.cs" />
+    <Compile Include="DefenseAttorneyService.cs" />
     <Compile Include="OfficerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateAttorneyService.cs" />

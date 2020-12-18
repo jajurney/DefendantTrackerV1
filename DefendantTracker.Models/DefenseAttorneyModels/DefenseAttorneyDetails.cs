@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DefendantTracker.Models.DefenseAttorneyModels
 {
-    public class DefenseAttorneyDetials
+    public class DefenseAttorneyDetails
     {
         public Guid DefenseAttorneyID { get; set; }
         [Display(Name ="First Name")]

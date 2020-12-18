@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace DefendantTracker.Models.StateAttorneyModels
 {
     public class StateAttorneyDetails
     {
-        public Guid DefenseAttorneyID { get; set; }
+        [Key]
+        public Guid StateAttorneyID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName

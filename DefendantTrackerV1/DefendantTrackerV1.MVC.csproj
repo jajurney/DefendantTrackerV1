@@ -256,14 +256,22 @@
     <Content Include="Views\Arrest\Details.cshtml" />
     <Content Include="Views\Arrest\Edit.cshtml" />
     <Content Include="Views\Arrest\Delete.cshtml" />
+    <Content Include="Views\DefenseAttorney\Index.cshtml" />
+    <Content Include="Views\DefenseAttorney\Create.cshtml" />
+    <Content Include="Views\DefenseAttorney\Details.cshtml" />
+    <Content Include="Views\DefenseAttorney\Edit.cshtml" />
+    <Content Include="Views\DefenseAttorney\Delete.cshtml" />
+    <Content Include="Views\StateAttorney\Index.cshtml" />
+    <Content Include="Views\StateAttorney\Create.cshtml" />
+    <Content Include="Views\StateAttorney\Details.cshtml" />
+    <Content Include="Views\StateAttorney\Edit.cshtml" />
+    <Content Include="Views\StateAttorney\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Conviction\" />
     <Folder Include="Views\CourtHearing\" />
-    <Folder Include="Views\DefenseAttorney\" />
     <Folder Include="Views\Defense\" />
-    <Folder Include="Views\StateAttorney\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

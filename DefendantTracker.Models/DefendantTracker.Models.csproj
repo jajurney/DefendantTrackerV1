@@ -71,7 +71,7 @@
     <Compile Include="DefendantModels\DefendantEdit.cs" />
     <Compile Include="DefendantModels\DefendantListItem.cs" />
     <Compile Include="DefenseAttorneyModels\DefenseAttorneyCreate.cs" />
-    <Compile Include="DefenseAttorneyModels\DefenseAttorneyDetials.cs" />
+    <Compile Include="DefenseAttorneyModels\DefenseAttorneyDetails.cs" />
     <Compile Include="DefenseAttorneyModels\DefenseAttorneyEdit.cs" />
     <Compile Include="DefenseAttorneyModels\DefenseAttorneyListItem.cs" />
     <Compile Include="OfficerModels\OfficerCreate.cs" />

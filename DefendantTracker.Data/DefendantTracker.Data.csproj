@@ -72,6 +72,14 @@
     <Compile Include="Migrations\202012162205103_2.Designer.cs">
       <DependentUpon>202012162205103_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202012181922169_five.cs" />
+    <Compile Include="Migrations\202012181922169_five.Designer.cs">
+      <DependentUpon>202012181922169_five.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012181927432_six.cs" />
+    <Compile Include="Migrations\202012181927432_six.Designer.cs">
+      <DependentUpon>202012181927432_six.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202012162205103_2.resx">
       <DependentUpon>202012162205103_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181922169_five.resx">
+      <DependentUpon>202012181922169_five.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012181927432_six.resx">
+      <DependentUpon>202012181927432_six.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
