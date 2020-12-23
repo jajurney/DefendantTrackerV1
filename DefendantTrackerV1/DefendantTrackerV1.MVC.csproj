@@ -266,11 +266,19 @@
     <Content Include="Views\StateAttorney\Details.cshtml" />
     <Content Include="Views\StateAttorney\Edit.cshtml" />
     <Content Include="Views\StateAttorney\Delete.cshtml" />
+    <Content Include="Views\Conviction\Index.cshtml" />
+    <Content Include="Views\Conviction\Create.cshtml" />
+    <Content Include="Views\Conviction\Details.cshtml" />
+    <Content Include="Views\Conviction\Edit.cshtml" />
+    <Content Include="Views\Conviction\Delete.cshtml" />
+    <Content Include="Views\CourtHearing\Index.cshtml" />
+    <Content Include="Views\CourtHearing\Create.cshtml" />
+    <Content Include="Views\CourtHearing\Details.cshtml" />
+    <Content Include="Views\CourtHearing\Edit.cshtml" />
+    <Content Include="Views\CourtHearing\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Conviction\" />
-    <Folder Include="Views\CourtHearing\" />
     <Folder Include="Views\Defense\" />
   </ItemGroup>
   <ItemGroup>

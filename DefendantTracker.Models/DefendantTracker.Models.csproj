@@ -62,8 +62,8 @@
     <Compile Include="ConvictionModels\ConvictionCreate.cs" />
     <Compile Include="ConvictionModels\ConvictionDetails.cs" />
     <Compile Include="ConvictionModels\ConvictionListItem.cs" />
-    <Compile Include="CourtHearingModels\ConvictionEdit.cs" />
-    <Compile Include="CourtHearingModels\ConvictionListItem.cs" />
+    <Compile Include="CourtHearingModels\CourtHearingEdit.cs" />
+    <Compile Include="CourtHearingModels\CourtHearingListItem.cs" />
     <Compile Include="CourtHearingModels\CourtHearingCreate.cs" />
     <Compile Include="CourtHearingModels\CourtHearingDetails.cs" />
     <Compile Include="DefendantModels\DefendantCreate.cs" />
@@ -88,6 +88,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DefendantTracker.Data\DefendantTracker.Data.csproj">
+      <Project>{ba9c7367-ab15-4d03-91a6-e22df0b14a02}</Project>
+      <Name>DefendantTracker.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

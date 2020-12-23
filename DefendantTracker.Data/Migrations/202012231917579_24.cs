@@ -3,7 +3,7 @@ namespace DefendantTracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class _24 : DbMigration
     {
         public override void Up()
         {
@@ -43,7 +43,7 @@ namespace DefendantTracker.Data.Migrations
                 "dbo.CourtHearing",
                 c => new
                     {
-                        CourtHearingID = c.Guid(nullable: false),
+                        CourtHearingID = c.Int(nullable: false, identity: true),
                         HearingDesc = c.String(nullable: false),
                         CourtDate = c.DateTime(nullable: false),
                         CourtAddress = c.String(nullable: false),
@@ -70,7 +70,7 @@ namespace DefendantTracker.Data.Migrations
                         Zipcode = c.Int(nullable: false),
                         FullLocation = c.String(nullable: false),
                         Prosecuted = c.Boolean(nullable: false),
-                        Arested = c.Boolean(nullable: false),
+                        Arrested = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.DefendantID);
             
@@ -130,12 +130,12 @@ namespace DefendantTracker.Data.Migrations
                 "dbo.StateAttorney",
                 c => new
                     {
-                        DefenseAttorneyID = c.Guid(nullable: false),
+                        StateAttorneyID = c.Guid(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         FullName = c.String(nullable: false),
                     })
-                .PrimaryKey(t => t.DefenseAttorneyID);
+                .PrimaryKey(t => t.StateAttorneyID);
             
             CreateTable(
                 "dbo.ApplicationUser",

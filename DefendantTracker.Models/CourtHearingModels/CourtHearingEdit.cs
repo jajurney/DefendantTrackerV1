@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DefendantTracker.Models.CourtHearingModels
 {
-    public class ConvictionListItem
+    public class CourtHearingEdit
     {
         public string HearingDesc { get; set; }
         public DateTime CourtDate { get; set; }

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DefendantTracker.Models.CourtHearingModels.CourtHearingListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HearingDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtCounty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtZipcode)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HearingDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtCounty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourtZipcode)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourtHearingID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CourtHearingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.CourtHearingID })
+        </td>
+    </tr>
+}
+
+</table>

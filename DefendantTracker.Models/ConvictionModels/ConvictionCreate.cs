@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DefendantTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,13 +24,5 @@ namespace DefendantTracker.Models.ConvictionModels
         public DateTime DateOfConviction { get; set; }
         [Required]
         public ConvictionSeverity ConvictionSeverity { get; set; }
-    }
-    public enum ConvictionSeverity
-    {
-        LevelOne,
-        LevelTwo,
-        LevelThree,
-        LevelFour,
-        LevelFive
     }
 }

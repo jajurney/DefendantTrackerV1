@@ -7,6 +7,14 @@ using System.Threading.Tasks;
 
 namespace DefendantTracker.Data
 {
+    public enum ConvictionSeverity
+    {
+        LevelOne,
+        LevelTwo,
+        LevelThree,
+        LevelFour,
+        LevelFive
+    }
     public class Conviction
     {
         [Key]
@@ -31,14 +39,8 @@ namespace DefendantTracker.Data
             set { }
         }
         public DateTime DateOfConviction { get; set; }
+        [Required]
         public ConvictionSeverity ConvictionSeverity { get; set; }
     }
-    public enum ConvictionSeverity
-    {
-        LevelOne,
-        LevelTwo,
-        LevelThree,
-        LevelFour,
-        LevelFive
-    }
+   
 }

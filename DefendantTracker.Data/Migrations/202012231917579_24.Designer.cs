@@ -7,13 +7,13 @@ namespace DefendantTracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class _24 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_24));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012161627259_InitialCreate"; }
+            get { return "202012231917579_24"; }
         }
         
         string IMigrationMetadata.Source

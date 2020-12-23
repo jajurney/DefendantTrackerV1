@@ -8,7 +8,7 @@ namespace DefendantTracker.Models.CourtHearingModels
 {
     public class CourtHearingDetails
     {
-        public Guid CourtHearingID { get; set; }
+        public int CourtHearingID { get; set; }
         public string HearingDesc { get; set; }
         public DateTime CourtDate { get; set; }
         public string CourtAddress { get; set; }
