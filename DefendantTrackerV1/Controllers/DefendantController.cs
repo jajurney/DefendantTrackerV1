@@ -15,8 +15,8 @@ namespace DefendantTrackerV1.Controllers
         // GET: Defendant
         public ActionResult Index()
         {
-            var defendantID = Guid.Parse(User.Identity.GetUserId());
-            var service = new DefendantService(defendantID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new DefendantService(userID);
             var model = service.GetDefendants();
             return View(model);
         }
@@ -41,13 +41,13 @@ namespace DefendantTrackerV1.Controllers
             ModelState.AddModelError("", "Defendant was not Created");
             return View(model);
         }
-        public ActionResult Details(Guid id)
+        public ActionResult Details(int id)
         {
             var dft = CreateDefendantService();
             var model = dft.GetDefendantById(id);
             return View(model);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(int id)
         {
             var service = CreateDefendantService();
             var detail = service.GetDefendantById(id);
@@ -67,13 +67,13 @@ namespace DefendantTrackerV1.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Guid id, DefendantEdit model)
+        public ActionResult Edit(int id, DefendantEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
            
             var service = CreateDefendantService();
-            if (service.UpdateDefendant(model))
+            if (service.UpdateDefendant(id, model))
             {
                 TempData["SaveResult"] = "Defendant Updated";
                 return RedirectToAction("Index");
@@ -82,7 +82,7 @@ namespace DefendantTrackerV1.Controllers
             return View(model);
         }
         [ActionName("Delete")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(int id)
         {
             var dft = CreateDefendantService();
             var model = dft.GetDefendantById(id);
@@ -91,7 +91,7 @@ namespace DefendantTrackerV1.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteDefendant(Guid id)
+        public ActionResult DeleteDefendant(int id)
         {
             var service = CreateDefendantService();
             service.DeleteDefendant(id);
@@ -100,8 +100,8 @@ namespace DefendantTrackerV1.Controllers
         }
         private DefendantService CreateDefendantService()
         {
-            var defendantID = Guid.Parse(User.Identity.GetUserId());
-            var service = new DefendantService(defendantID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new DefendantService(userID);
             return service;
         }
     }

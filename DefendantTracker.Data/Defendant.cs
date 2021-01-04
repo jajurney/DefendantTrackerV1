@@ -11,8 +11,7 @@ namespace DefendantTracker.Data
     public class Defendant
     {
         [Key]
-        public Guid DefendantID { get; set; }
-        [Required]
+        public int DefendantID { get; set; }
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }

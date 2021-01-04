@@ -8,7 +8,7 @@ namespace DefendantTracker.Models.StateAttorneyModels
 {
     public class StateAttorneyEdit
     {
-        public Guid StateAttorneyID { get; set; }
+        public int StateAttorneyID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }

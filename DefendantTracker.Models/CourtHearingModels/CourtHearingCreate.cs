@@ -9,6 +9,8 @@ namespace DefendantTracker.Models.CourtHearingModels
 {
     public class CourtHearingCreate
     {
+        [Key]
+        public int CourtHearingID { get; set; }
         [Required]
         public string HearingDesc { get; set; }
         [Required]

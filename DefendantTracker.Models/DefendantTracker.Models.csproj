@@ -83,6 +83,9 @@
     <Compile Include="StateAttorneyModels\StateAttorneyDetails.cs" />
     <Compile Include="StateAttorneyModels\StateAttorneyEdit.cs" />
     <Compile Include="StateAttorneyModels\StateAttorneyListItem.cs" />
+    <Compile Include="USERS\UserDetails.cs" />
+    <Compile Include="USERS\UserEdit.cs" />
+    <Compile Include="USERS\UserListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,7 +10,6 @@ namespace DefendantTracker.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "DefendantTracker.Data.ApplicationDbContext";
         }
 
         protected override void Seed(DefendantTracker.Data.ApplicationDbContext context)

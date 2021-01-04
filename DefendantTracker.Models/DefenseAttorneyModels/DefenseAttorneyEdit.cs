@@ -8,7 +8,7 @@ namespace DefendantTracker.Models.DefenseAttorneyModels
 {
     public class DefenseAttorneyEdit
     {
-        public Guid DefenseAttorneyID { get; set; }
+        public int DefenseAttorneyID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }

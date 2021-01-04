@@ -34,11 +34,9 @@ namespace DefendantTracker.Data
             set { }
         }
         public string ArrestDesc { get; set; }
-       // [ForeignKey(nameof(OfficerID))]
-        //public Guid OfficerID { get; set; }
-        //public virtual Officer Officer { get; set; }
-       // [ForeignKey(nameof(DefendantID))]
-       // public Guid DefendantID { get; set; }
-        //public virtual Defendant Defendant { get; set; }
+     
+        public int DefendantID { get; set; }
+        [ForeignKey("DefendantID")]
+        public virtual Defendant Defendant { get; set; }
     }
 }

@@ -10,16 +10,16 @@ namespace DefendantTracker.Services
 {
     public class DefenseAttorneyService
     {
-        private readonly Guid _defenseID;
-        public DefenseAttorneyService(Guid defenseID)
+        private readonly Guid _userID;
+        public DefenseAttorneyService(Guid userID)
         {
-            _defenseID = defenseID;
+           _userID = userID;
         }
         public bool CreateDefenseAttorney(DefenseAttorneyCreate model)
         {
             var entity = new DefenseAttorney()
             {
-                DefenseAttorneyID = _defenseID,
+                DefenseAttorneyID = model.DefenseAttorneyID,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
             };
@@ -35,12 +35,11 @@ namespace DefendantTracker.Services
             {
                 var query = dft
                         .DefenseAttorneys
-                        .Where(e => e.DefenseAttorneyID == _defenseID)
                         .Select(
                             e =>
                             new DefenseAttorneyListItem
                             {
-                                DefenseAttorneyID = _defenseID,
+                                DefenseAttorneyID = e.DefenseAttorneyID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 FullName = e.FullName
@@ -49,43 +48,44 @@ namespace DefendantTracker.Services
                 return query.ToArray();
             }
         }
-        public DefenseAttorneyDetails GetDefenseAttorneysById(Guid id)
+        public DefenseAttorneyDetails GetDefenseAttorneysById(int id)
         {
             using (var dfa = new ApplicationDbContext())
             {
                 var entity = dfa
                     .DefenseAttorneys
-                    .Single(e => e.DefenseAttorneyID == _defenseID);
+                    .Single(e => e.DefenseAttorneyID == id);
                 return
                     new DefenseAttorneyDetails
                     {
+                        DefenseAttorneyID = entity.DefenseAttorneyID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         FullName = entity.FullName
                     };
             }
         }
-        public bool UpdateDefenseAttorney(DefenseAttorneyEdit model)
+        public bool UpdateDefenseAttorney(int id, DefenseAttorneyEdit model)
         {
             using (var dft = new ApplicationDbContext())
             {
                 var entity =
                     dft
                     .DefenseAttorneys
-                    .Single(e => e.DefenseAttorneyID == _defenseID);
+                    .Single(e => e.DefenseAttorneyID == id);
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 return dft.SaveChanges() == 1;
             }
         }
-        public bool DeleteDefenseAttorney (Guid id)
+        public bool DeleteDefenseAttorney(int id)
         {
             using (var dfa = new ApplicationDbContext())
             {
                 var entity =
                     dfa
                         .DefenseAttorneys
-                        .Single(e => e.DefenseAttorneyID == _defenseID);
+                        .Single(e => e.DefenseAttorneyID == id);
                 dfa.DefenseAttorneys.Remove(entity);
                 return dfa.SaveChanges() == 1;
             }

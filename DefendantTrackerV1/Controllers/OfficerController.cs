@@ -14,8 +14,8 @@ namespace DefendantTrackerV1.Controllers
         // GET: Officer
         public ActionResult Index()
         {
-            var officerID = Guid.Parse(User.Identity.GetUserId());
-            var service = new OfficerService(officerID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new OfficerService(userID);
             var model = service.GetOfficers();
             return View(model);
         }
@@ -40,18 +40,19 @@ namespace DefendantTrackerV1.Controllers
             ModelState.AddModelError("", "Officer was not Created");
             return View(model);
         }
-        public ActionResult Details(Guid id)
+        public ActionResult Details(int id)
         {
             var off = CreateOfficerService();
             var model = off.GetOfficerById(id);
             return View(model);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(int id)
         {
             var service = CreateOfficerService();
             var detail = service.GetOfficerById(id);
             var model = new OfficerEdit
             {
+                BadgeID = detail.BadgeID,
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,
                 DepartmentCity = detail.DepartmentCity,
@@ -64,13 +65,13 @@ namespace DefendantTrackerV1.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Guid id, OfficerEdit model)
+        public ActionResult Edit(int id, OfficerEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
 
             var service = CreateOfficerService();
-            if (service.UpdateOfficer(model))
+            if (service.UpdateOfficer(id, model))
             {
                 TempData["SaveResult"] = "Officer Updated";
                 return RedirectToAction("Index");
@@ -79,7 +80,7 @@ namespace DefendantTrackerV1.Controllers
             return View(model);
         }
         [ActionName("Delete")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(int id)
         {
             var off = CreateOfficerService();
             var model = off.GetOfficerById(id);
@@ -88,7 +89,7 @@ namespace DefendantTrackerV1.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteOfficer(Guid id)
+        public ActionResult DeleteOfficer(int id)
         {
             var service = CreateOfficerService();
             service.DeleteOfficer(id);
@@ -97,8 +98,8 @@ namespace DefendantTrackerV1.Controllers
         }
         private OfficerService CreateOfficerService()
         {
-            var officerID = Guid.Parse(User.Identity.GetUserId());
-            var service = new OfficerService(officerID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new OfficerService(userID);
             return service;
         }
     }

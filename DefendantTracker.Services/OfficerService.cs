@@ -10,16 +10,17 @@ namespace DefendantTracker.Services
 {
     public class OfficerService
     {
-        private readonly Guid _officerID;
-        public OfficerService(Guid officerID)
+        private readonly Guid _userID;
+        public OfficerService(Guid userID)
         {
-            _officerID = officerID;
+            _userID = userID;
         }
         public bool CreateOfficer(OfficerCreate model)
         {
             var entity = new Officer()
             {
-                OfficerID = _officerID,
+                OfficerID = model.OfficerID,
+                BadgeID = model.BadgeID,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 DepartmentCity = model.DepartmentCity,
@@ -40,12 +41,12 @@ namespace DefendantTracker.Services
             {
                 var query = off
                         .Officers
-                        .Where(e => e.OfficerID == _officerID)
                         .Select(
                             e =>
                             new OfficerListItem
                             {
-                                OfficerID = _officerID,
+                                OfficerID = e.OfficerID,
+                                BadgeID = e.BadgeID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 DepartmentCity = e.DepartmentCity,
@@ -58,17 +59,18 @@ namespace DefendantTracker.Services
                 return query.ToArray();
             }
         }
-        public OfficerDetails GetOfficerById(Guid id)
+        public OfficerDetails GetOfficerById(int id)
         {
             using (var off = new ApplicationDbContext())
             {
                 var entity = off
                     .Officers
-                    .Single(e => e.OfficerID == _officerID);
+                    .Single(e => e.OfficerID == id);
                 return
                     new OfficerDetails
                     {
-                        OfficerID = _officerID,
+                        OfficerID = entity.OfficerID,
+                        BadgeID = entity.BadgeID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         FullName = entity.FullName,
@@ -81,14 +83,15 @@ namespace DefendantTracker.Services
                     };
             }
         }
-        public bool UpdateOfficer(OfficerEdit model)
+        public bool UpdateOfficer(int id, OfficerEdit model)
         {
             using (var off = new ApplicationDbContext())
             {
                 var entity =
                     off
                     .Officers
-                    .Single(e => e.OfficerID == _officerID);
+                    .Single(e => e.OfficerID == id);
+                entity.BadgeID = model.BadgeID;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.DepartmentCity = model.DepartmentCity;
@@ -99,14 +102,14 @@ namespace DefendantTracker.Services
                 return off.SaveChanges() == 1;
             }
         }
-        public bool DeleteOfficer(Guid id)
+        public bool DeleteOfficer(int id)
         {
             using (var off = new ApplicationDbContext())
             {
                 var entity =
                     off
                         .Officers
-                        .Single(e => e.OfficerID == _officerID);
+                        .Single(e => e.OfficerID == id);
                 off.Officers.Remove(entity);
                 return off.SaveChanges() == 1;
             }

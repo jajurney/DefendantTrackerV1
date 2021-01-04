@@ -10,16 +10,16 @@ namespace DefendantTracker.Services
 {
     public class DefendantService
     {
-        private readonly Guid _defendantID;
-        public DefendantService(Guid defendantID)
+        private readonly Guid _userID;
+        public DefendantService(Guid userID)
         {
-            _defendantID = defendantID;
+            _userID = userID;
         }
         public bool CreateDefendant(DefendantCreate model)
         {
             var entity = new Defendant()
             {
-                DefendantID = _defendantID,
+                DefendantID = model.DefendantID,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 StreetAddress = model.StreetAddress,
@@ -42,12 +42,11 @@ namespace DefendantTracker.Services
             {
                 var query = dft
                         .Defendants
-                        .Where(e => e.DefendantID == _defendantID)
                         .Select(
                             e =>
                             new DefendantListItem
                             {
-                                DefendantID = _defendantID,
+                                DefendantID = e.DefendantID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 StreetAddress = e.StreetAddress,
@@ -62,17 +61,17 @@ namespace DefendantTracker.Services
                 return query.ToArray();
             }
         }
-        public DefendantDetails GetDefendantById(Guid id)
+        public DefendantDetails GetDefendantById(int id)
         {
             using (var dft = new ApplicationDbContext())
             {
                 var entity = dft
                     .Defendants
-                    .Single(e => e.DefendantID == _defendantID);
+                    .Single(e => e.DefendantID == id);
                 return
                     new DefendantDetails
                     {
-                        DefendantID = _defendantID,
+                        DefendantID = entity.DefendantID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         FullName = entity.FullName,
@@ -87,14 +86,14 @@ namespace DefendantTracker.Services
                     };
             }
         }
-        public bool UpdateDefendant(DefendantEdit model)
+        public bool UpdateDefendant(int id, DefendantEdit model)
         {
             using (var dft = new ApplicationDbContext())
             {
                 var entity =
                     dft
                     .Defendants
-                    .Single(e => e.DefendantID == _defendantID);
+                    .Single(e => e.DefendantID == id);
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.StreetAddress = model.StreetAddress;
@@ -107,14 +106,14 @@ namespace DefendantTracker.Services
                 return dft.SaveChanges() == 1;
             }
         }
-        public bool DeleteDefendant(Guid id)
+        public bool DeleteDefendant(int id)
         {
             using (var dft = new ApplicationDbContext())
             {
                 var entity =
                     dft
                         .Defendants
-                        .Single(e => e.DefendantID == _defendantID);
+                        .Single(e => e.DefendantID == id);
                 dft.Defendants.Remove(entity);
                 return dft.SaveChanges() == 1;
             }

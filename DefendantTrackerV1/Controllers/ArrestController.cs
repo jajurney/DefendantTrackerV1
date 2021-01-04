@@ -59,6 +59,7 @@ namespace DefendantTrackerV1.Controllers
                 ArrestState = detail.ArrestState,
                 ArrestZipcode = detail.ArrestZipcode,
                 ArrestDesc = detail.ArrestDesc,
+                DefendantID = detail.DefendantID
             };
             return View(model);
         }

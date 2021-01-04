@@ -9,6 +9,8 @@ namespace DefendantTracker.Models.StateAttorneyModels
 {
     public class StateAttorneyCreate
     {
+        public int StateAttorneyID { get; set; }
+
         [Required]
         public string FirstName { get; set; }
         [Required]

@@ -14,8 +14,8 @@ namespace DefendantTrackerV1.Controllers
         // GET: DefenseAttorney
         public ActionResult Index()
         {
-            var defenseID = Guid.Parse(User.Identity.GetUserId());
-            var service = new DefenseAttorneyService(defenseID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new DefenseAttorneyService(userID);
             var model = service.GetDefenseAttorneys();
             return View(model);
         }
@@ -40,13 +40,13 @@ namespace DefendantTrackerV1.Controllers
             ModelState.AddModelError("", "Defense Attorney was not Created");
             return View(model);
         }
-        public ActionResult Details(Guid id)
+        public ActionResult Details(int id)
         {
             var dfa = CreateDefenseAttorneyService();
             var model = dfa.GetDefenseAttorneysById(id);
             return View(model);
         }
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(int id)
         {
             var service = CreateDefenseAttorneyService();
             var detail = service.GetDefenseAttorneysById(id);
@@ -59,13 +59,13 @@ namespace DefendantTrackerV1.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Guid id, DefenseAttorneyEdit model)
+        public ActionResult Edit(int id, DefenseAttorneyEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
 
             var service = CreateDefenseAttorneyService();
-            if (service.UpdateDefenseAttorney(model))
+            if (service.UpdateDefenseAttorney(id, model))
             {
                 TempData["SaveResult"] = "Defense Attorney Updated";
                 return RedirectToAction("Index");
@@ -74,7 +74,7 @@ namespace DefendantTrackerV1.Controllers
             return View(model);
         }
         [ActionName("Delete")]
-        public ActionResult Delete(Guid id)
+        public ActionResult Delete(int id)
         {
             var dfa = CreateDefenseAttorneyService();
             var model = dfa.GetDefenseAttorneysById(id);
@@ -83,7 +83,7 @@ namespace DefendantTrackerV1.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteDefenseAttorney(Guid id)
+        public ActionResult DeleteDefenseAttorney(int id)
         {
             var service = CreateDefenseAttorneyService();
             service.DeleteDefenseAttorney(id);
@@ -92,8 +92,8 @@ namespace DefendantTrackerV1.Controllers
         }
         private DefenseAttorneyService CreateDefenseAttorneyService()
         {
-            var defenseID = Guid.Parse(User.Identity.GetUserId());
-            var service = new DefenseAttorneyService(defenseID);
+            var userID = Guid.Parse(User.Identity.GetUserId());
+            var service = new DefenseAttorneyService(userID);
             return service;
         }
     }

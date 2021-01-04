@@ -20,7 +20,8 @@ namespace DefendantTracker.Services
         public bool CreateCourtHearing(CourtHearingCreate model)
         {
             var entity = new CourtHearing()
-            {
+            { 
+                CourtHearingID = model.CourtHearingID,
                 HearingDesc = model.HearingDesc,
                 CourtDate = model.CourtDate,
                 CourtAddress = model.CourtAddress,
@@ -45,6 +46,7 @@ namespace DefendantTracker.Services
                             e =>
                             new CourtHearingListItem
                             {
+                                CourtHearingID = e.CourtHearingID,
                                 HearingDesc = e.HearingDesc,
                                 CourtDate = e.CourtDate,
                                 CourtAddress = e.CourtAddress,

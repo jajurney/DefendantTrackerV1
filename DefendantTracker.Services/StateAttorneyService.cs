@@ -10,16 +10,16 @@ namespace DefendantTracker.Services
 {
     public class StateAttorneyService
     {
-        private readonly Guid _stateID;
-        public StateAttorneyService(Guid stateID)
+        private readonly Guid _userID;
+        public StateAttorneyService(Guid userID)
         {
-            _stateID = stateID;
+            _userID = userID;
         }
         public bool CreateStateAttorney(StateAttorneyCreate model)
         {
             var entity = new StateAttorney()
             {
-                StateAttorneyID = _stateID,
+                StateAttorneyID = model.StateAttorneyID,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
             };
@@ -35,12 +35,11 @@ namespace DefendantTracker.Services
             {
                 var query = sat
                         .StateAttorneys
-                        .Where(e => e.StateAttorneyID == _stateID)
                         .Select(
                             e =>
                             new StateAttorneyListItem
                             {
-                                StateAttorneyID = _stateID,
+                                StateAttorneyID = e.StateAttorneyID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
                                 FullName = e.FullName
@@ -49,43 +48,44 @@ namespace DefendantTracker.Services
                 return query.ToArray();
             }
         }
-        public StateAttorneyDetails GetStateAttorneysById(Guid id)
+        public StateAttorneyDetails GetStateAttorneysById(int id)
         {
             using (var sat = new ApplicationDbContext())
             {
                 var entity = sat
                     .StateAttorneys
-                    .Single(e => e.StateAttorneyID == _stateID);
+                    .Single(e => e.StateAttorneyID == id);
                 return
                     new StateAttorneyDetails
                     {
+                        StateAttorneyID = entity.StateAttorneyID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         FullName = entity.FullName
                     };
             }
         }
-        public bool UpdateStateAttorney(StateAttorneyEdit model)
+        public bool UpdateStateAttorney(int id, StateAttorneyEdit model)
         {
             using (var sat = new ApplicationDbContext())
             {
                 var entity =
                     sat
                     .StateAttorneys
-                    .Single(e => e.StateAttorneyID == _stateID);
+                    .Single(e => e.StateAttorneyID == id);
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 return sat.SaveChanges() == 1;
             }
         }
-        public bool DeleteStateAttorney(Guid id)
+        public bool DeleteStateAttorney(int id)
         {
             using (var sat = new ApplicationDbContext())
             {
                 var entity =
                     sat
                         .StateAttorneys
-                        .Single(e => e.StateAttorneyID == _stateID);
+                        .Single(e => e.StateAttorneyID == id);
                 sat.StateAttorneys.Remove(entity);
                 return sat.SaveChanges() == 1;
             }

@@ -8,7 +8,7 @@ namespace DefendantTracker.Models.DefendantModels
 {
     public class DefendantEdit
     {
-        public Guid DefendantID { get; set; }
+        public int DefendantID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string StreetAddress { get; set; }

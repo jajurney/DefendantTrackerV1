@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Criminal", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Criminal Defense Tracking", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -26,7 +26,8 @@
                     <li>@Html.ActionLink("State Attorneys", "Index", "StateAttorney")</li>
                     <li>@Html.ActionLink("Defense Attorneys", "Index", "DefenseAttorney")</li>
                     <li>@Html.ActionLink("Arrest", "Index", "Arrest")</li>
-
+                    <li>@Html.ActionLink("Convictions", "Index", "Conviction")</li>
+                    <li>@Html.ActionLink("CourtHearings", "Index", "Courthearing")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

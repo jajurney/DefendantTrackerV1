@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrestService.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="ConvictionService.cs" />
     <Compile Include="CourtHearingService.cs" />
     <Compile Include="DefendantService.cs" />

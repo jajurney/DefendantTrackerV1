@@ -26,6 +26,7 @@ namespace DefendantTracker.Services
                 County = model.County,
                 State = model.State,
                 Zipcode = model.Zipcode,
+                ConvictionSeverity = model.ConvictionSeverity,
                 DateOfConviction = DateTime.Now
             };
             using (var con = new ApplicationDbContext())
@@ -51,7 +52,8 @@ namespace DefendantTracker.Services
                                 State = e.State,
                                 Zipcode = e.Zipcode,
                                 FullLocation = e.FullLocation,
-                                DateOfConviction = e.DateOfConviction
+                                DateOfConviction = e.DateOfConviction,
+                                ConvictionSeverity = e.ConvictionSeverity
                             }
                     );
                 return query.ToArray();
@@ -74,7 +76,8 @@ namespace DefendantTracker.Services
                         State = entity.State,
                         Zipcode = entity.Zipcode,
                         FullLocation = entity.FullLocation,
-                        DateOfConviction = entity.DateOfConviction
+                        DateOfConviction = entity.DateOfConviction,
+                        ConvictionSeverity = entity.ConvictionSeverity
                     };
             }
         }
@@ -92,6 +95,7 @@ namespace DefendantTracker.Services
                 entity.State = model.State;
                 entity.Zipcode = model.Zipcode;
                 entity.DateOfConviction = model.DateOfConviction;
+                entity.ConvictionSeverity = model.ConvictionSeverity;
                 return con.SaveChanges() == 1;
             }
         }

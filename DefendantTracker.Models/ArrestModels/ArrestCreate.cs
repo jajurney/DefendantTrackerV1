@@ -23,5 +23,7 @@ namespace DefendantTracker.Models.ArrestModels
         public int ArrestZipcode { get; set; }
         [Required]
         public string ArrestDesc { get; set; }
+        public int DefendantID { get; set; }
+
     }
 }

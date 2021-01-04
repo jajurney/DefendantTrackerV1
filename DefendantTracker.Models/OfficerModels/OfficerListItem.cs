@@ -8,7 +8,8 @@ namespace DefendantTracker.Models.OfficerModels
 {
     public class OfficerListItem
     {
-        public Guid OfficerID { get; set; }
+        public int OfficerID { get; set; }
+        public int BadgeID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string DepartmentCity { get; set; }

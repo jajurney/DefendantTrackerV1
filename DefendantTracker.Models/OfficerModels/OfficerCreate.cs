@@ -9,6 +9,9 @@ namespace DefendantTracker.Models.OfficerModels
 {
     public class OfficerCreate
     {
+        public int OfficerID { get; set; }
+        [Required]
+        public int BadgeID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

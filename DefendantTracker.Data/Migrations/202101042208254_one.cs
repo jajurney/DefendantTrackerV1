@@ -3,7 +3,7 @@ namespace DefendantTracker.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class _24 : DbMigration
+    public partial class one : DbMigration
     {
         public override void Up()
         {
@@ -20,8 +20,30 @@ namespace DefendantTracker.Data.Migrations
                         ArrestZipcode = c.Int(nullable: false),
                         ArrestLocation = c.String(nullable: false),
                         ArrestDesc = c.String(),
+                        DefendantID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.ArrestID);
+                .PrimaryKey(t => t.ArrestID)
+                .ForeignKey("dbo.Defendant", t => t.DefendantID, cascadeDelete: true)
+                .Index(t => t.DefendantID);
+            
+            CreateTable(
+                "dbo.Defendant",
+                c => new
+                    {
+                        DefendantID = c.Int(nullable: false, identity: true),
+                        FirstName = c.String(),
+                        LastName = c.String(nullable: false),
+                        FullName = c.String(nullable: false),
+                        StreetAddress = c.String(nullable: false),
+                        City = c.String(nullable: false),
+                        County = c.String(nullable: false),
+                        State = c.String(nullable: false),
+                        Zipcode = c.Int(nullable: false),
+                        FullLocation = c.String(nullable: false),
+                        Prosecuted = c.Boolean(nullable: false),
+                        Arrested = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.DefendantID);
             
             CreateTable(
                 "dbo.Conviction",
@@ -56,29 +78,10 @@ namespace DefendantTracker.Data.Migrations
                 .PrimaryKey(t => t.CourtHearingID);
             
             CreateTable(
-                "dbo.Defendant",
-                c => new
-                    {
-                        DefendantID = c.Guid(nullable: false),
-                        FirstName = c.String(nullable: false),
-                        LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
-                        StreetAddress = c.String(nullable: false),
-                        City = c.String(nullable: false),
-                        County = c.String(nullable: false),
-                        State = c.String(nullable: false),
-                        Zipcode = c.Int(nullable: false),
-                        FullLocation = c.String(nullable: false),
-                        Prosecuted = c.Boolean(nullable: false),
-                        Arrested = c.Boolean(nullable: false),
-                    })
-                .PrimaryKey(t => t.DefendantID);
-            
-            CreateTable(
                 "dbo.DefenseAttorney",
                 c => new
                     {
-                        DefenseAttorneyID = c.Guid(nullable: false),
+                        DefenseAttorneyID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         FullName = c.String(nullable: false),
@@ -89,7 +92,8 @@ namespace DefendantTracker.Data.Migrations
                 "dbo.Officer",
                 c => new
                     {
-                        OfficerID = c.Guid(nullable: false),
+                        OfficerID = c.Int(nullable: false, identity: true),
+                        BadgeID = c.Int(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         FullName = c.String(nullable: false),
@@ -130,7 +134,7 @@ namespace DefendantTracker.Data.Migrations
                 "dbo.StateAttorney",
                 c => new
                     {
-                        StateAttorneyID = c.Guid(nullable: false),
+                        StateAttorneyID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
                         FullName = c.String(nullable: false),
@@ -191,10 +195,12 @@ namespace DefendantTracker.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Arrest", "DefendantID", "dbo.Defendant");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Arrest", new[] { "DefendantID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
@@ -203,9 +209,9 @@ namespace DefendantTracker.Data.Migrations
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Officer");
             DropTable("dbo.DefenseAttorney");
-            DropTable("dbo.Defendant");
             DropTable("dbo.CourtHearing");
             DropTable("dbo.Conviction");
+            DropTable("dbo.Defendant");
             DropTable("dbo.Arrest");
         }
     }

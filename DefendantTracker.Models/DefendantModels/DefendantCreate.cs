@@ -9,6 +9,7 @@ namespace DefendantTracker.Models.DefendantModels
 {
     public class DefendantCreate
     {
+        public int DefendantID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

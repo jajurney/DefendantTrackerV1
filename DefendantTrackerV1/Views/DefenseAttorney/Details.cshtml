@@ -10,7 +10,13 @@
     <h4>DefenseAttorneyDetails</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DefenseAttorneyID)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.DefenseAttorneyID)
+        </dd>
         <dt>
             @Html.DisplayNameFor(model => model.FirstName)
         </dt>
@@ -38,6 +44,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.DefenseAttorneyID  }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

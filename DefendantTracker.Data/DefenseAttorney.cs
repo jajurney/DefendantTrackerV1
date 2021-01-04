@@ -10,7 +10,7 @@ namespace DefendantTracker.Data
     public class DefenseAttorney
     {
         [Key]
-        public Guid DefenseAttorneyID { get; set; }
+        public int DefenseAttorneyID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
