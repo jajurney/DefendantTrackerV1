@@ -60,7 +60,12 @@ namespace DefendantTrackerV1.Controllers
                 CourtCity = detail.CourtCity,
                 CourtCounty = detail.CourtCounty,
                 CourtState = detail.CourtState,
-                CourtZipcode = detail.CourtZipcode
+                CourtZipcode = detail.CourtZipcode,
+                StateAttorneyID = detail.StateAttorneyID,
+                DefenseAttorneyID = detail.DefenseAttorneyID,
+                OfficerID = detail.OfficerID,
+                DefendantID = detail.DefendantID,
+                ArrestID = detail.ArrestID
             };
             return View(model);
         }

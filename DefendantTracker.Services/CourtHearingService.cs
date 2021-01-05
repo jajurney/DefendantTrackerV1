@@ -28,7 +28,13 @@ namespace DefendantTracker.Services
                 CourtCity = model.CourtCity,
                 CourtCounty = model.CourtCounty,
                 CourtState = model.CourtState,
-                CourtZipcode = model.CourtZipcode
+                CourtZipcode = model.CourtZipcode,
+                StateAttorneyID = model.StateAttorneyID,
+                DefenseAttorneyID = model.DefenseAttorneyID,
+                OfficerID = model.OfficerID,
+                DefendantID = model.DefendantID,
+                ArrestID = model.ArrestID
+
             };
             using (var cor = new ApplicationDbContext())
             {
@@ -53,7 +59,13 @@ namespace DefendantTracker.Services
                                 CourtCity = e.CourtCity,
                                 CourtCounty = e.CourtCounty,
                                 CourtState = e.CourtState,
-                                CourtZipcode= e.CourtZipcode
+                                CourtZipcode= e.CourtZipcode,
+                                StateAttorneyID = e.StateAttorneyID,
+                                DefenseAttorneyID = e.DefenseAttorneyID,
+                                OfficerID = e.OfficerID,
+                                DefendantID = e.DefendantID,
+                                ArrestID = e.ArrestID
+
                             }
                     );
                 return query.ToArray();
@@ -77,7 +89,13 @@ namespace DefendantTracker.Services
                         CourtCounty = entity.CourtCounty,
                         CourtState = entity.CourtState,
                         CourtZipcode = entity.CourtZipcode,
-                        FullLocation = entity.FullLocation
+                        FullLocation = entity.FullLocation,
+                        StateAttorneyID = entity.StateAttorneyID,
+                        DefenseAttorneyID = entity.DefenseAttorneyID,
+                        OfficerID = entity.OfficerID,
+                        DefendantID = entity.DefendantID,
+                        ArrestID = entity.ArrestID
+
                     };
             }
         }
@@ -95,6 +113,11 @@ namespace DefendantTracker.Services
                 entity.CourtCounty = model.CourtCounty;
                 entity.CourtState = model.CourtState;
                 entity.CourtZipcode = model.CourtZipcode;
+                entity.StateAttorneyID = model.StateAttorneyID;
+                entity.DefenseAttorneyID = model.DefenseAttorneyID;
+                entity.OfficerID = model.OfficerID;
+                entity.DefendantID = model.DefendantID;
+                entity.ArrestID = model.ArrestID;
                 return cor.SaveChanges() == 1;
             }
         }

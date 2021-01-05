@@ -38,5 +38,8 @@ namespace DefendantTracker.Data
         public int DefendantID { get; set; }
         [ForeignKey("DefendantID")]
         public virtual Defendant Defendant { get; set; }
+        public int OfficerID { get; set; }
+        [ForeignKey("OfficerID")]
+        public virtual Officer Officers { get; set; }
     }
 }

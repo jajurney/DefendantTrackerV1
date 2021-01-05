@@ -7,13 +7,13 @@ namespace DefendantTracker.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class one : IMigrationMetadata
+    public sealed partial class one6 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(one));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(one6));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101042208254_one"; }
+            get { return "202101051923217_one6"; }
         }
         
         string IMigrationMetadata.Source

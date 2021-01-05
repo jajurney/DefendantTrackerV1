@@ -24,6 +24,7 @@ namespace DefendantTracker.Models.ArrestModels
         [Required]
         public string ArrestDesc { get; set; }
         public int DefendantID { get; set; }
+        public int OfficerID { get; set; }
 
     }
 }

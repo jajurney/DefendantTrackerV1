@@ -24,5 +24,11 @@ namespace DefendantTracker.Models.CourtHearingModels
             }
             set { }
         }
+        public int StateAttorneyID { get; set; }
+        public int DefenseAttorneyID { get; set; }
+        public int OfficerID { get; set; }
+        public int DefendantID { get; set; }
+        public int ArrestID { get; set; }
+
     }
 }

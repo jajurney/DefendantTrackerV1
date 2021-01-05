@@ -26,5 +26,8 @@ namespace DefendantTracker.Models.DefendantModels
         public int Zipcode { get; set; }
         public bool Prosecuted { get; set; }
         public bool Arrested { get; set; }
+        //public int CourtHearingID { get; set; }
+        //public int ConvictionID { get; set; }
+
     }
 }

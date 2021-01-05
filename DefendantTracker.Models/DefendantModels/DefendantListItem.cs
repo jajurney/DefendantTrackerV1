@@ -11,14 +11,16 @@ namespace DefendantTracker.Models.DefendantModels
         public int DefendantID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-      
         public string StreetAddress { get; set; }
         public string City { get; set; }
         public string County { get; set; }
         public string State { get; set; }
         public int Zipcode { get; set; }
-   
         public bool Prosecuted { get; set; }
         public bool Arrested { get; set; }
+        public int ArrestID { get; set; }
+        //public int CourtHearingID { get; set; }
+        //public int ConvictionID { get; set; }
+
     }
 }

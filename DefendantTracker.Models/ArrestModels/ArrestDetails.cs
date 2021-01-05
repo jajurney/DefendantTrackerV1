@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DefendantTracker.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,8 @@ namespace DefendantTracker.Models.ArrestModels
         }
         public string ArrestDesc { get; set; }
         public int DefendantID { get; set; }
+        public int OfficerID { get; set; }
+        public virtual Officer Officers { get; set; }
 
     }
 }

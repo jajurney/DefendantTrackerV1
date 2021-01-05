@@ -7,7 +7,8 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h3>Arrests</h3>
+    @Html.ActionLink("Add New Arrest", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -20,6 +21,7 @@
     </div>
 }
 <table class="table">
+    
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ArrestID)
@@ -48,6 +50,9 @@
         <th>
             @Html.DisplayNameFor(model => model.DefendantID)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </th>
         <th></th>
     </tr>
 
@@ -55,6 +60,7 @@
     {
 <tr>
     <td>
+        <h4>Arrest Id:</h4>
         @Html.DisplayFor(modelItem => item.ArrestID)
     </td>
     <td>
@@ -82,11 +88,18 @@
         @Html.DisplayFor(modelItem => item.DefendantID)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID }) ||
-        @Html.ActionLink("Details", "Details", new { id = item.ArrestID }) ||
+        @Html.DisplayFor(modelItem => item.OfficerID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID })|
+        @Html.ActionLink("Details", "Details", new { id = item.ArrestID })|
         @Html.ActionLink("Delete", "Delete", new { id = item.ArrestID })
     </td>
 </tr>
     }
 
 </table>
+<style>
+   table{background-color: #9D8D8F}
+   
+</style>

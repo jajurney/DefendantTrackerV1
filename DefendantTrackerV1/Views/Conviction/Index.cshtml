@@ -35,6 +35,15 @@
         <th>
             @Html.DisplayNameFor(model => model.ConvictionSeverity)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrestID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefendantID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtHearingID)
+        </th>
         <th></th>
     </tr>
 
@@ -65,7 +74,16 @@
         @Html.DisplayFor(modelItem => item.ConvictionSeverity)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id= item.ConvicID }) |
+        @Html.DisplayFor(modelItem => item.ArrestID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DefendantID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourtHearingID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ConvicID }) |
         @Html.ActionLink("Details", "Details", new { id = item.ConvicID }) |
         @Html.ActionLink("Delete", "Delete", new { id = item.ConvicID })
     </td>

@@ -60,8 +60,10 @@ namespace DefendantTrackerV1.Controllers
                 County = detail.County,
                 State = detail.State,
                 Zipcode = detail.Zipcode,
-                Arrested = detail.Arrested,
                 Prosecuted = detail.Prosecuted,
+                Arrested = detail.Arrested,
+                //CourtHearingID = detail.CourtHearingID,
+                //ConvictionID = detail.ConvictionID
             };
             return View(model);
         }

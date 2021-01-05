@@ -61,7 +61,10 @@ namespace DefendantTrackerV1.Controllers
                 State = detail.State,
                 Zipcode = detail.Zipcode,
                 DateOfConviction = DateTime.Now,
-                ConvictionSeverity = detail.ConvictionSeverity
+                ConvictionSeverity = detail.ConvictionSeverity,
+                ArrestID = detail.ArrestID,
+                DefendantID = detail.DefendantID,
+                CourtHearingID = detail.CourtHearingID
             };
             return View(model);
         }
@@ -106,4 +109,4 @@ namespace DefendantTrackerV1.Controllers
             return service;
         }
     }
-} 
+}

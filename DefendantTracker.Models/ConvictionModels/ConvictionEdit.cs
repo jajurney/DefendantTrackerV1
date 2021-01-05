@@ -17,5 +17,9 @@ namespace DefendantTracker.Models.ConvictionModels
         public int Zipcode { get; set; }
         public DateTime DateOfConviction { get; set; }
         public ConvictionSeverity ConvictionSeverity { get; set; }
+        public int ArrestID { get; set; }
+        public int DefendantID { get; set; }
+        public int CourtHearingID { get; set; }
+
     }
 }

@@ -26,8 +26,11 @@ namespace DefendantTracker.Services
                 County = model.County,
                 State = model.State,
                 Zipcode = model.Zipcode,
+                DateOfConviction = DateTime.Now,
                 ConvictionSeverity = model.ConvictionSeverity,
-                DateOfConviction = DateTime.Now
+                ArrestID = model.ArrestID,
+                DefendantID = model.DefendantID,
+                CourtHearingID = model.CourtHearingID
             };
             using (var con = new ApplicationDbContext())
             {
@@ -53,7 +56,10 @@ namespace DefendantTracker.Services
                                 Zipcode = e.Zipcode,
                                 FullLocation = e.FullLocation,
                                 DateOfConviction = e.DateOfConviction,
-                                ConvictionSeverity = e.ConvictionSeverity
+                                ConvictionSeverity = e.ConvictionSeverity,
+                                ArrestID = e.ArrestID,
+                                DefendantID = e.DefendantID,
+                                CourtHearingID = e.CourtHearingID
                             }
                     );
                 return query.ToArray();
@@ -77,7 +83,10 @@ namespace DefendantTracker.Services
                         Zipcode = entity.Zipcode,
                         FullLocation = entity.FullLocation,
                         DateOfConviction = entity.DateOfConviction,
-                        ConvictionSeverity = entity.ConvictionSeverity
+                        ConvictionSeverity = entity.ConvictionSeverity,
+                        ArrestID = entity.ArrestID,
+                        DefendantID = entity.DefendantID,
+                        CourtHearingID = entity.CourtHearingID
                     };
             }
         }
@@ -96,6 +105,9 @@ namespace DefendantTracker.Services
                 entity.Zipcode = model.Zipcode;
                 entity.DateOfConviction = model.DateOfConviction;
                 entity.ConvictionSeverity = model.ConvictionSeverity;
+                entity.ArrestID = model.ArrestID;
+                entity.DefendantID = model.DefendantID;
+                entity.CourtHearingID = model.CourtHearingID;
                 return con.SaveChanges() == 1;
             }
         }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Criminal Defense Tracker</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
@@ -17,6 +17,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @Html.Partial("_LoginPartial")
+
                 @Html.ActionLink("Criminal Defense Tracking", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
@@ -28,8 +30,10 @@
                     <li>@Html.ActionLink("Arrest", "Index", "Arrest")</li>
                     <li>@Html.ActionLink("Convictions", "Index", "Conviction")</li>
                     <li>@Html.ActionLink("CourtHearings", "Index", "Courthearing")</li>
+                    <li>@Html.ActionLink("About Us", "Index", "About")</li>
+                    <li>@Html.ActionLink("Contact Us", "Index", "Contact")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
             </div>
         </div>
     </div>
@@ -37,7 +41,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Criminal Defense Tracking</p>
         </footer>
     </div>
 
@@ -46,3 +50,26 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<style>
+    .navbar {
+        background-color: #5A5560;
+    }
+
+    .navbar-brand {
+        color: #FAED26 !important;
+        font-size: 25px !important;
+        font-family: 'Agency FB' !important;
+        margin-top: 10px;
+    }
+
+    .body-content {
+        color: #FAED26 !important;
+        font-family: 'Agency FB' !important;
+        background-color: #46344E;
+        width: 1200px;
+    }
+
+    body {
+        background-color: black;
+    }
+</style>

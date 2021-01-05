@@ -28,8 +28,8 @@ namespace DefendantTracker.Services
                 ArrestState = model.ArrestState,
                 ArrestZipcode = model.ArrestZipcode,
                 ArrestDesc = model.ArrestDesc,
-                DefendantID = model.DefendantID
-
+                DefendantID = model.DefendantID,
+                OfficerID = model.OfficerID
             };
             using (var arr = new ApplicationDbContext())
             {
@@ -55,7 +55,8 @@ namespace DefendantTracker.Services
                                 ArrestState = e.ArrestState,
                                 ArrestZipcode = e.ArrestZipcode,
                                 ArrestDesc = e.ArrestDesc,
-                                DefendantID = e.DefendantID
+                                DefendantID = e.DefendantID,
+                                OfficerID = e.OfficerID
                             }
                     );
                 return query.ToArray();
@@ -80,7 +81,8 @@ namespace DefendantTracker.Services
                         ArrestZipcode = entity.ArrestZipcode,
                         ArrestLocation = entity.ArrestLocation,
                         ArrestDesc = entity.ArrestDesc,
-                        DefendantID = entity.DefendantID
+                        DefendantID = entity.DefendantID,
+                        OfficerID = entity.OfficerID
                     };
             }
         }
@@ -100,7 +102,7 @@ namespace DefendantTracker.Services
                 entity.ArrestZipcode = model.ArrestZipcode;
                 entity.ArrestDesc = model.ArrestDesc;
                 entity.DefendantID = model.DefendantID;
-
+                entity.OfficerID = model.OfficerID;
                 return arr.SaveChanges() == 1;
             }
         }

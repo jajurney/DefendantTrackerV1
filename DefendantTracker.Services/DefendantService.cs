@@ -28,7 +28,9 @@ namespace DefendantTracker.Services
                 State = model.State,
                 Zipcode = model.Zipcode,
                 Prosecuted = model.Prosecuted,
-                Arrested = model.Arrested
+                Arrested = model.Arrested,
+                //CourtHearingID = model.CourtHearingID,
+                //ConvictionID = model.ConvictionID
             };
             using (var dft = new ApplicationDbContext())
             {
@@ -54,8 +56,10 @@ namespace DefendantTracker.Services
                                 County = e.County,
                                 State = e.State,
                                 Zipcode = e.Zipcode,
+                                Arrested = e.Arrested,
                                 Prosecuted = e.Prosecuted,
-                                Arrested = e.Arrested
+                                //CourtHearingID = e.CourtHearingID,
+                                //ConvictionID = e.ConvictionID
                             }
                     );
                 return query.ToArray();
@@ -82,7 +86,9 @@ namespace DefendantTracker.Services
                         Zipcode = entity.Zipcode,
                         FullLocation = entity.FullLocation,
                         Arrested = entity.Arrested,
-                        Prosecuted = entity.Prosecuted
+                        Prosecuted = entity.Prosecuted,
+                        //CourtHearingID = entity.CourtHearingID,
+                        //ConvictionID = entity.ConvictionID
                     };
             }
         }
@@ -103,6 +109,8 @@ namespace DefendantTracker.Services
                 entity.Zipcode = model.Zipcode;
                 entity.Arrested = model.Arrested;
                 entity.Prosecuted = model.Prosecuted;
+                //entity.CourtHearingID = model.CourtHearingID;
+                //entity.ConvictionID = model.ConvictionID;
                 return dft.SaveChanges() == 1;
             }
         }
