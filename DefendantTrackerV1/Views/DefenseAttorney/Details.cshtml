@@ -3,9 +3,6 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
 <div>
     <h4>DefenseAttorneyDetails</h4>
     <hr />
@@ -45,5 +42,18 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new {  id = Model.DefenseAttorneyID  }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("See All Defense Attorneys", "Index")
 </p>
+<style>
+    h4 {
+        margin-top: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .dl-horizontal {
+        margin: 0 auto;
+        font-size: 15px;
+        width: 550px;
+    }
+</style>

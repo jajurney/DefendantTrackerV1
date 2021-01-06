@@ -35,10 +35,10 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateDefendantService();
             if (service.CreateDefendant(model))
             {
-                TempData["SaveResult"] = "Defendant was Created";
+                TempData["SaveResult"] = "Defendant was added";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Defendant was not Created");
+            ModelState.AddModelError("", "Defendant was not added");
             return View(model);
         }
         public ActionResult Details(int id)

@@ -25,10 +25,15 @@ namespace DefendantTracker.Models.CourtHearingModels
         public string CourtState { get; set; }
         [Required]
         public int CourtZipcode { get; set; }
+        [Required]
         public int StateAttorneyID { get; set; }
+        [Required]
         public int DefenseAttorneyID { get; set; }
+        [Required]
         public int OfficerID { get; set; }
+        [Required]
         public int DefendantID { get; set; }
+        [Required]
         public int ArrestID { get; set; }
 
     }

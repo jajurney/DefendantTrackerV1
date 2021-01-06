@@ -10,9 +10,13 @@ namespace DefendantTracker.Models.StateAttorneyModels
     public class StateAttorneyDetails
     {
         [Key]
+        [Display(Name = "State Attorney Id:")]
         public int StateAttorneyID { get; set; }
+        [Display(Name = "First Name:")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name:")]
         public string LastName { get; set; }
+        [Display(Name = "Full Name:")]
         public string FullName
         {
             get

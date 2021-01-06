@@ -34,10 +34,10 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateCourtHearingService();
             if (service.CreateCourtHearing(model))
             {
-                TempData["SaveResult"] = "CourtHearing was add to Defendant";
+                TempData["SaveResult"] = "Court Hearing was added";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "CourtHearing was not added");
+            ModelState.AddModelError("", "Court Hearing was not added");
             return View(model);
         }
         // CourtHearing/Details/{id}

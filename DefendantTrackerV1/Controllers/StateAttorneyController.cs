@@ -34,10 +34,10 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateStateAttorneyService();
             if (service.CreateStateAttorney(model))
             {
-                TempData["SaveResult"] = "State Attorney was Created";
+                TempData["SaveResult"] = "State Attorney was added";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "State Attorney was not Created");
+            ModelState.AddModelError("", "State Attorney was not added");
             return View(model);
         }
         public ActionResult Details(int id)

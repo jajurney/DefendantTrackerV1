@@ -3,99 +3,154 @@
 @{
     ViewBag.Title = "Edit";
 }
+@*The code below adds an image uploading section to my html page*@
+@{ WebImage photo = null;
 
-<h2>Edit</h2>
+    var newFileName = "";
+    var imagePath = "";
+
+    if (IsPost)
+    {
+        photo = WebImage.GetImageFromRequest();
+        if (photo != null)
+        {
+            newFileName = Guid.NewGuid().ToString() + "_" +
+                Path.GetFileName(photo.FileName);
+            imagePath = @"images\" + newFileName;
+
+            photo.Save(@"~\" + imagePath);
+        }
+    }
+}
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-    <h4>ArrestEdit</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestDate, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestDate, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestDate, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.StreetName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.StreetName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.StreetName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    <div class="form-horizontal">
+        <h4>Update This Arrest</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestDate, "Arrest Date:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestDate, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestCity, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestCity, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestCity, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestCounty, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestCounty, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestCounty, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.StreetName, "Street Name:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StreetName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.StreetName, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestState, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestState, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestState, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestCity, "Arrest City:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestCity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestCity, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestZipcode, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestZipcode, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestZipcode, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestCounty, "Arrest County:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestCounty, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestCounty, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ArrestDesc, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.ArrestDesc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.ArrestDesc, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestState, "Arrest State:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestState, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestState, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestZipcode, "Arrest Zipcode:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestZipcode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestZipcode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrestDesc, "Arrest Description:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrestDesc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrestDesc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.DefendantID, "Defendant Id:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DefendantID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DefendantID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.OfficerID, "Officer Id:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.OfficerID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OfficerID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update Arrest" class="btn btn-default" />
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.DefendantID, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DefendantID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DefendantID, "", new { @class = "text-danger" })
-        </div>
+    /*The code below adds an image uploading section to my html page*/
+    <div class="image-upload">
+        <form action="" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <h1>Upload Image of Arrest Record</h1>
+                <legend></legend>
+                <label for="Image"></label>
+                <input type="file" name="Image" />
+                <br />
+                <input type="submit" value="Add Image" class="btn btn-default" />
+            </fieldset>
+        </form>
+        @if (imagePath != "")
+        {
+            <div class="result">
+                <img src="@imagePath" alt="image" />
+
+            </div>
+        }
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.OfficerID, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.OfficerID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.OfficerID, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
-        </div>
-    </div>
-</div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("See All Arrests", "Index")
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<style>
+    h4 {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 70px;
+    }
+
+    .form-horizontal {
+        margin: 0 auto;
+        width: 550px;
+    }
+
+    .image-upload {
+        margin: 0 auto;
+        width: 550px;
+    }
+</style>

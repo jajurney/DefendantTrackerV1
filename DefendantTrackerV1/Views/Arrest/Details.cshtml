@@ -99,6 +99,19 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ArrestID }) |
+    @Html.ActionLink("See All Arrests", "Index")
 </p>
+<style>
+    h4 {
+        margin-top: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .dl-horizontal {
+        margin: 0 auto;
+        font-size: 15px;
+        width: 550px;
+    }
+</style>

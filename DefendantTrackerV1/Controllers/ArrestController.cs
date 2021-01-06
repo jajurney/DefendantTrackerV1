@@ -21,6 +21,7 @@ namespace DefendantTrackerV1.Controllers
         }
         // GET: Create
         // Arrest/Create
+
         public ActionResult Create()
         {
             return View();
@@ -34,7 +35,7 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateArrestService();
             if (service.CreateArrest(model))
             {
-                TempData["SaveResult"] = "Arrest was add to Defendant";
+                TempData["SaveResult"] = "Arrest was added";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Arrest was not added");

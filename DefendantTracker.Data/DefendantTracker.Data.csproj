@@ -60,37 +60,9 @@
     <Compile Include="Defendant.cs" />
     <Compile Include="DefenseAttorney.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202101051608141_three.cs" />
-    <Compile Include="Migrations\202101051608141_three.Designer.cs">
-      <DependentUpon>202101051608141_three.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051630268_one.cs" />
-    <Compile Include="Migrations\202101051630268_one.Designer.cs">
-      <DependentUpon>202101051630268_one.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051641559_one1.cs" />
-    <Compile Include="Migrations\202101051641559_one1.Designer.cs">
-      <DependentUpon>202101051641559_one1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051651449_one2.cs" />
-    <Compile Include="Migrations\202101051651449_one2.Designer.cs">
-      <DependentUpon>202101051651449_one2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051751255_one3.cs" />
-    <Compile Include="Migrations\202101051751255_one3.Designer.cs">
-      <DependentUpon>202101051751255_one3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051903579_one4.cs" />
-    <Compile Include="Migrations\202101051903579_one4.Designer.cs">
-      <DependentUpon>202101051903579_one4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051912149_one5.cs" />
-    <Compile Include="Migrations\202101051912149_one5.Designer.cs">
-      <DependentUpon>202101051912149_one5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101051923217_one6.cs" />
-    <Compile Include="Migrations\202101051923217_one6.Designer.cs">
-      <DependentUpon>202101051923217_one6.cs</DependentUpon>
+    <Compile Include="Migrations\202101061721248_one.cs" />
+    <Compile Include="Migrations\202101061721248_one.Designer.cs">
+      <DependentUpon>202101061721248_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Officer.cs" />
@@ -102,29 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101051608141_three.resx">
-      <DependentUpon>202101051608141_three.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051630268_one.resx">
-      <DependentUpon>202101051630268_one.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051641559_one1.resx">
-      <DependentUpon>202101051641559_one1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051651449_one2.resx">
-      <DependentUpon>202101051651449_one2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051751255_one3.resx">
-      <DependentUpon>202101051751255_one3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051903579_one4.resx">
-      <DependentUpon>202101051903579_one4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051912149_one5.resx">
-      <DependentUpon>202101051912149_one5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051923217_one6.resx">
-      <DependentUpon>202101051923217_one6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101061721248_one.resx">
+      <DependentUpon>202101061721248_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

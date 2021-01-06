@@ -3,11 +3,9 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
 <p>
     <h3>Arrests</h3>
+    <h4>Here you will find a list of all the Arrests in our system.</h4>
     @Html.ActionLink("Add New Arrest", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
@@ -60,7 +58,7 @@
     {
 <tr>
     <td>
-        <h4>Arrest Id:</h4>
+       
         @Html.DisplayFor(modelItem => item.ArrestID)
     </td>
     <td>
@@ -100,6 +98,13 @@
 
 </table>
 <style>
-   table{background-color: #9D8D8F}
-   
+    table {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h3 {
+        margin-top: 70px;
+        font-size: 40px;
+    }
 </style>

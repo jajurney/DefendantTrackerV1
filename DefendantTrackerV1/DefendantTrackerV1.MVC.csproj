@@ -272,13 +272,13 @@
     <Content Include="Views\Conviction\Edit.cshtml" />
     <Content Include="Views\Conviction\Delete.cshtml" />
     <Content Include="Views\CourtHearing\Index.cshtml" />
-    <Content Include="Views\CourtHearing\Create.cshtml" />
     <Content Include="Views\CourtHearing\Details.cshtml" />
     <Content Include="Views\CourtHearing\Edit.cshtml" />
     <Content Include="Views\CourtHearing\Delete.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\CourtHearing\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

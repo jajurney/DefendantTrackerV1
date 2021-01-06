@@ -34,10 +34,10 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateOfficerService();
             if (service.CreateOfficer(model))
             {
-                TempData["SaveResult"] = "Officer was Created";
+                TempData["SaveResult"] = "Officer was added";
                 return RedirectToAction("Index");
             };
-            ModelState.AddModelError("", "Officer was not Created");
+            ModelState.AddModelError("", "Officer was not added");
             return View(model);
         }
         public ActionResult Details(int id)

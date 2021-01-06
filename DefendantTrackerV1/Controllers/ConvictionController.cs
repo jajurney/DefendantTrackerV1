@@ -34,7 +34,7 @@ namespace DefendantTrackerV1.Controllers
             var service = CreateConvictionService();
             if (service.CreateConviction(model))
             {
-                TempData["SaveResult"] = "Conviction was add to Defendant";
+                TempData["SaveResult"] = "Conviction was added";
                 return RedirectToAction("Index");
             };
             ModelState.AddModelError("", "Conviction was not added");

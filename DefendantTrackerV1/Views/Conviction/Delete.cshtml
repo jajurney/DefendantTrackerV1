@@ -4,11 +4,11 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this Convictions?</h3>
+
+
 <div>
-    <h4>ConvictionDetails</h4>
+    <h4>Are you sure you want to delete this Conviction?</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -102,7 +102,20 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("See All Convictions", "Index")
         </div>
     }
 </div>
+<style>
+    h4 {
+        margin-top: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .dl-horizontal {
+        margin: 0 auto;
+        font-size: 15px;
+        width: 550px;
+    }
+</style>

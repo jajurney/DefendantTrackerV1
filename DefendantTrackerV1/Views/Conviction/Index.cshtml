@@ -3,11 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h3>Convictions</h3>
+    <h4>Here is a list of all the Convictions we are aware of currently.</h4>
+    @Html.ActionLink("Add New Conviction", "Create")
 </p>
 <table class="table">
     <tr>
@@ -91,3 +90,14 @@
 }
 
 </table>
+<style>
+    table {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h3 {
+        margin-top: 70px;
+        font-size: 40px;
+    }
+</style>

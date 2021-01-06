@@ -11,7 +11,7 @@ namespace DefendantTracker.Services
     public class CourtHearingService
     { 
         private readonly Guid _userID;
-        //private readonly Guid _defendantID;
+       
 
         public CourtHearingService(Guid userID)
         {

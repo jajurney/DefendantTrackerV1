@@ -3,11 +3,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <h3>Officers</h3>
+    <h4>Here you will find a list of all the Officers in our system.</h4>
+    @Html.ActionLink("Add New Officer", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -90,3 +89,14 @@
     }
 
 </table>
+<style>
+    table {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h3 {
+        margin-top: 70px;
+        font-size: 40px;
+    }
+</style>
