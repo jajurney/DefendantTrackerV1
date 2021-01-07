@@ -1,5 +1,5 @@
 # Criminal Defense Tracking MVC Webpage
-A MVC Full Stack webpage for tracking Defendants through the court process, starting from arrest to coviction/sentencing.
+A MVC Full Stack webpage for tracking Defendants through the court process, starting from arrest to conviction/sentencing.
 #### Developers:
 * [Joseph Jurney](https://github.com/jajurney)
 
