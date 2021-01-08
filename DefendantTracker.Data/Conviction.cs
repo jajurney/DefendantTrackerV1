@@ -1,12 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DefendantTracker.Data
 {
+    public enum ConvictionSeverity
+    {
+        LevelOne,
+        LevelTwo,
+        LevelThree,
+        LevelFour,
+        LevelFive
+    }
     public class Conviction
     {
         [Key]
@@ -31,14 +40,17 @@ namespace DefendantTracker.Data
             set { }
         }
         public DateTime DateOfConviction { get; set; }
+        [Required]
         public ConvictionSeverity ConvictionSeverity { get; set; }
+        public int ArrestID { get; set; }
+        [ForeignKey("ArrestID")]
+        public virtual Arrest Arrest { get; set; }
+        public int DefendantID { get; set; }
+        [ForeignKey("DefendantID")]
+        public virtual Defendant Defendant { get; set; }
+        public int CourtHearingID { get; set; }
+        [ForeignKey("CourtHearingID")]
+        public virtual CourtHearing CourtHearing { get; set; }
     }
-    public enum ConvictionSeverity
-    {
-        LevelOne,
-        LevelTwo,
-        LevelThree,
-        LevelFour,
-        LevelFive
-    }
+   
 }

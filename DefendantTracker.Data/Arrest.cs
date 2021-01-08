@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,9 +34,12 @@ namespace DefendantTracker.Data
             set { }
         }
         public string ArrestDesc { get; set; }
-        // [ForeignKey(nameof(OfficerID))]
-        // public virtual Officer Officer { get; set; }
-        // [ForeignKey(nameof(DefendantID))]
-        // public virtual Defendant Defendant { get; set; }
+     
+        public int DefendantID { get; set; }
+        [ForeignKey("DefendantID")]
+        public virtual Defendant Defendant { get; set; }
+        public int OfficerID { get; set; }
+        [ForeignKey("OfficerID")]
+        public virtual Officer Officers { get; set; }
     }
 }

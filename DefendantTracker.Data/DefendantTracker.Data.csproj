@@ -60,6 +60,11 @@
     <Compile Include="Defendant.cs" />
     <Compile Include="DefenseAttorney.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202101062235282_one.cs" />
+    <Compile Include="Migrations\202101062235282_one.Designer.cs">
+      <DependentUpon>202101062235282_one.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateAttorney.cs" />
@@ -67,6 +72,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101062235282_one.resx">
+      <DependentUpon>202101062235282_one.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

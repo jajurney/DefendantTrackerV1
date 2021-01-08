@@ -11,8 +11,7 @@ namespace DefendantTracker.Data
     public class Defendant
     {
         [Key]
-        public Guid DefendantID { get; set; }
-        [Required]
+        public int DefendantID { get; set; }
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
@@ -45,15 +44,12 @@ namespace DefendantTracker.Data
             set { }
         }
         public bool Prosecuted { get; set; }
-        public bool Arested { get; set; }
-        // [ForeignKey(nameof(StateAttorneyID))]
-        // public virtual StateAttorney StateAttorney { get; set; }
-        // [ForeignKey(nameof(DefenseAttorneyID))]
-        // public virtual DefenseAttorney DefenseAttorney { get; set; }
-        // [ForeignKey(nameof(OfficerID))]
-        // public virtual Officer Officer { get; set; }
-        // public List<CourtHearing> CourtHearings { get; set; } = new List<CourtHearing>();
-        //public List<Conviction> Convictions { get; set; } = new List<Conviction>();
-        //public List<Arrest> Arrests { get; set; } = new List<Arrest>();
+        public bool Arrested { get; set; }
+        //public int CourtHearingID { get; set; }
+        //[ForeignKey("CourtHearingID")]
+        //public virtual CourtHearing CourtHearings{ get; set; }
+        //public int ConvictionID { get; set; }
+        //[ForeignKey("ConvictionID")]
+        //public virtual Conviction Convictions { get; set; }
     }
 }

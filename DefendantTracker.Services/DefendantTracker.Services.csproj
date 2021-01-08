@@ -54,11 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrestService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="ConvictionService.cs" />
+    <Compile Include="CourtHearingService.cs" />
+    <Compile Include="DefendantService.cs" />
+    <Compile Include="DefenseAttorneyService.cs" />
+    <Compile Include="OfficerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateAttorneyService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DefendantTracker.Data\DefendantTracker.Data.csproj">
+      <Project>{ba9c7367-ab15-4d03-91a6-e22df0b14a02}</Project>
+      <Name>DefendantTracker.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DefendantTracker.Models\DefendantTracker.Models.csproj">
+      <Project>{c3730276-94b4-4502-b426-10381ca8cea9}</Project>
+      <Name>DefendantTracker.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,123 @@
+﻿@model DefendantTracker.Models.ArrestModels.ArrestDetails
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+
+<div>
+    <h4>Are you sure you want to remove this Arrest?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StreetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StreetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestCounty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestCounty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestZipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestZipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrestDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrestDesc)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefendantID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefendantID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficerID)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("See All Arrests", "Index")
+        </div>
+    }
+</div>
+<style>
+    h4{
+        margin-top: 70px;
+        font-size:30px;
+        text-align:center;
+    }
+    .dl-horizontal{
+        margin: 0 auto;
+        font-size: 15px;
+        width:550px;
+    }
+    
+</style>

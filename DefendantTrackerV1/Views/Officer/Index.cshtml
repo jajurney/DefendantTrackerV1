@@ -1,0 +1,102 @@
+﻿@model IEnumerable<DefendantTracker.Models.OfficerModels.OfficerListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    <h3>Officers</h3>
+    <h4>Here you will find a list of all the Officers in our system.</h4>
+    @Html.ActionLink("Add New Officer", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BadgeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentCounty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentZipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <th>
+        @Html.DisplayFor(modelitem => item.OfficerID)
+    </th>
+    <th>
+        @Html.DisplayFor(modelitem => item.BadgeID)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentCity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentCounty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentState)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentZipcode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentName)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.OfficerID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.OfficerID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.OfficerID })
+    </td>
+</tr>
+    }
+
+</table>
+<style>
+    table {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h3 {
+        margin-top: 70px;
+        font-size: 40px;
+    }
+</style>

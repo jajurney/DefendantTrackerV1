@@ -1,0 +1,127 @@
+﻿@model DefendantTracker.Models.CourtHearingModels.CourtHearingDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <h4>Court Hearing Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtHearingID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtHearingID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HearingDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HearingDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtCounty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtCounty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtState)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourtZipcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourtZipcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullLocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StateAttorneyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateAttorneyID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefenseAttorneyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefenseAttorneyID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DefendantID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefendantID)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.CourtHearingID }) |
+    @Html.ActionLink("See All Court Hearings", "Index")
+</p>
+<style>
+    h4 {
+        margin-top: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .dl-horizontal {
+        margin: 0 auto;
+        font-size: 15px;
+        width: 550px;
+    }
+</style>

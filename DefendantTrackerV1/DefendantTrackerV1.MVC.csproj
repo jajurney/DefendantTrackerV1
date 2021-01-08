@@ -168,8 +168,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArrestController.cs" />
+    <Compile Include="Controllers\ConvictionController.cs" />
+    <Compile Include="Controllers\CourtHearingController.cs" />
+    <Compile Include="Controllers\DefendantController.cs" />
+    <Compile Include="Controllers\DefenseAttorneyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OfficerController.cs" />
+    <Compile Include="Controllers\StateAttorneyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,10 +221,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
@@ -229,11 +233,48 @@
     <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Defendant\Create.cshtml" />
+    <Content Include="Views\Defendant\Details.cshtml" />
+    <Content Include="Views\Defendant\Edit.cshtml" />
+    <Content Include="Views\Defendant\Delete.cshtml" />
+    <Content Include="Views\Defendant\Index.cshtml" />
+    <Content Include="Views\Officer\Index.cshtml" />
+    <Content Include="Views\Officer\Create.cshtml" />
+    <Content Include="Views\Officer\Details.cshtml" />
+    <Content Include="Views\Officer\Edit.cshtml" />
+    <Content Include="Views\Officer\Delete.cshtml" />
+    <Content Include="Views\Arrest\Index.cshtml" />
+    <Content Include="Views\Arrest\Create.cshtml" />
+    <Content Include="Views\Arrest\Details.cshtml" />
+    <Content Include="Views\Arrest\Edit.cshtml" />
+    <Content Include="Views\Arrest\Delete.cshtml" />
+    <Content Include="Views\DefenseAttorney\Index.cshtml" />
+    <Content Include="Views\DefenseAttorney\Create.cshtml" />
+    <Content Include="Views\DefenseAttorney\Details.cshtml" />
+    <Content Include="Views\DefenseAttorney\Edit.cshtml" />
+    <Content Include="Views\DefenseAttorney\Delete.cshtml" />
+    <Content Include="Views\StateAttorney\Index.cshtml" />
+    <Content Include="Views\StateAttorney\Create.cshtml" />
+    <Content Include="Views\StateAttorney\Details.cshtml" />
+    <Content Include="Views\StateAttorney\Edit.cshtml" />
+    <Content Include="Views\StateAttorney\Delete.cshtml" />
+    <Content Include="Views\Conviction\Index.cshtml" />
+    <Content Include="Views\Conviction\Create.cshtml" />
+    <Content Include="Views\Conviction\Details.cshtml" />
+    <Content Include="Views\Conviction\Edit.cshtml" />
+    <Content Include="Views\Conviction\Delete.cshtml" />
+    <Content Include="Views\CourtHearing\Index.cshtml" />
+    <Content Include="Views\CourtHearing\Details.cshtml" />
+    <Content Include="Views\CourtHearing\Edit.cshtml" />
+    <Content Include="Views\CourtHearing\Delete.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Details.cshtml" />
+    <Content Include="Views\Account\Edit.cshtml" />
+    <Content Include="Views\CourtHearing\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

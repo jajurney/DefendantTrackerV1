@@ -1,0 +1,110 @@
+﻿@model IEnumerable<DefendantTracker.Models.CourtHearingModels.CourtHearingListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+<p>
+    <h3>Court Hearings</h3>
+    <h4>Here is all of our Court Hearings.</h4>
+    @Html.ActionLink("Add New Court Hearing", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtHearingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HearingDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtCounty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourtZipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateAttorneyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefenseAttorneyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfficerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DefendantID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtHearingID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HearingDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtCounty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtZipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateAttorneyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefenseAttorneyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefendantID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CourtHearingID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CourtHearingID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CourtHearingID })
+            </td>
+        </tr>
+    }
+
+</table>
+<style>
+    table {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    h3 {
+        margin-top: 70px;
+        font-size: 40px;
+    }
+</style>

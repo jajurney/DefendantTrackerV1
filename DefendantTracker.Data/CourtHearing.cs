@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace DefendantTracker.Data
     public class CourtHearing
     {
         [Key]
-        public Guid CourtHearingID { get; set; }
+        public int CourtHearingID { get; set; }
         [Required]
         public string HearingDesc { get; set; }
         [Required]
@@ -34,15 +35,20 @@ namespace DefendantTracker.Data
             }
             set { }
         }
-        // [ForeignKey(nameof(StateAttorneyID))]
-        // public virtual StateAttorney StateAttorney { get; set; }
-        // [ForeignKey(nameof(DefenseAttorneyID))]
-        // public virtual DefenseAttorney DefenseAttorney { get; set; }
-        // [ForeignKey(nameof(OfficerID))]
-        // public virtual Officer Officer { get; set; }
-        // [ForeignKey(nameof(DefendantID))]
-        // public virtual Defendant Defendant { get; set; }
-        // [ForeignKey(nameof(ArrestID))]
-        // public virtual Arrest Arrest { get; set; }
+        public int StateAttorneyID { get; set; }
+        [ForeignKey("StateAttorneyID")]
+        public virtual StateAttorney StateAttorney { get; set; }
+        public int DefenseAttorneyID { get; set; }
+        [ForeignKey("DefenseAttorneyID")]
+        public virtual DefenseAttorney DefenseAttorney { get; set; }
+        public int OfficerID { get; set; }
+        [ForeignKey("OfficerID")]
+        public virtual Officer Officer { get; set; }
+        public int DefendantID { get; set; }
+        [ForeignKey("DefendantID")]
+        public virtual Defendant Defendant { get; set; }
+        public int ArrestID { get; set; }
+        [ForeignKey("ArrestID")]
+        public virtual Arrest Arrest { get; set; }
     }
 }

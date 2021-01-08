@@ -10,7 +10,9 @@ namespace DefendantTracker.Data
     public class Officer
     {
         [Key]
-        public Guid OfficerID { get; set; }
+        public int OfficerID { get; set; }
+        [Required]
+        public int BadgeID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]

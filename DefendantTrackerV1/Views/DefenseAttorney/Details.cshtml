@@ -1,0 +1,59 @@
+﻿@model DefendantTracker.Models.DefenseAttorneyModels.DefenseAttorneyDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+<div>
+    <h4>DefenseAttorneyDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DefenseAttorneyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefenseAttorneyID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.DefenseAttorneyID  }) |
+    @Html.ActionLink("See All Defense Attorneys", "Index")
+</p>
+<style>
+    h4 {
+        margin-top: 70px;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .dl-horizontal {
+        margin: 0 auto;
+        font-size: 15px;
+        width: 550px;
+    }
+</style>

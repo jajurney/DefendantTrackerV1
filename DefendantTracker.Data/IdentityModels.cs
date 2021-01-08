@@ -32,6 +32,13 @@ namespace DefendantTracker.Data
             return new ApplicationDbContext();
         }
         public DbSet<Defendant> Defendants { get; set; }
+        public DbSet<Officer> Officers { get; set; }
+        public DbSet<StateAttorney> StateAttorneys { get; set; }
+        public DbSet<DefenseAttorney> DefenseAttorneys { get; set; }
+        public DbSet<Conviction> Convictions { get; set; }
+        public DbSet<CourtHearing> CourtHearings { get; set; }
+        public DbSet<Arrest> Arrests { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
