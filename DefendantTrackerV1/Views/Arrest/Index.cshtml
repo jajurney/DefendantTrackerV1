@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<DefendantTracker.Models.ArrestModels.ArrestListItem>
-
 @{
     ViewBag.Title = "Index";
 }
@@ -18,8 +17,8 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
-    
+<table class="table-responsive table pull-left">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ArrestID)
@@ -56,50 +55,50 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-       
-        @Html.DisplayFor(modelItem => item.ArrestID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StreetName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestCity)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestCounty)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestState)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestZipcode)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestDesc)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DefendantID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.OfficerID)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID })|
-        @Html.ActionLink("Details", "Details", new { id = item.ArrestID })|
-        @Html.ActionLink("Delete", "Delete", new { id = item.ArrestID })
-    </td>
-</tr>
+        <tr>
+            <td>
+
+                @Html.DisplayFor(modelItem => item.ArrestID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestCounty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestZipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestDesc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefendantID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfficerID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID })|
+                @Html.ActionLink("Details", "Details", new { id = item.ArrestID })|
+                @Html.ActionLink("Delete", "Delete", new { id = item.ArrestID })
+            </td>
+        </tr>
     }
 
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 

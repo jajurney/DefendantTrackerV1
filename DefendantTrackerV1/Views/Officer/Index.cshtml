@@ -18,7 +18,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.OfficerID)
@@ -52,46 +52,46 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <th>
-        @Html.DisplayFor(modelitem => item.OfficerID)
-    </th>
-    <th>
-        @Html.DisplayFor(modelitem => item.BadgeID)
-    </th>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DepartmentCity)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DepartmentCounty)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DepartmentState)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DepartmentZipcode)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DepartmentName)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.OfficerID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.OfficerID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.OfficerID })
-    </td>
-</tr>
+        <tr>
+            <th>
+                @Html.DisplayFor(modelitem => item.OfficerID)
+            </th>
+            <th>
+                @Html.DisplayFor(modelitem => item.BadgeID)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentCounty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentZipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartmentName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OfficerID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OfficerID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OfficerID })
+            </td>
+        </tr>
     }
 
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 

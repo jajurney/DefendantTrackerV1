@@ -8,7 +8,7 @@
     <h4>Here is all of our Court Hearings.</h4>
     @Html.ActionLink("Add New Court Hearing", "Create")
 </p>
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CourtHearingID)
@@ -99,7 +99,7 @@
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 
