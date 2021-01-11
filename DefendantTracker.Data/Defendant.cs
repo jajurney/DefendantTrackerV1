@@ -16,7 +16,7 @@ namespace DefendantTracker.Data
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string FullName
+        public string DFullName
         {
             get
             {
@@ -45,11 +45,5 @@ namespace DefendantTracker.Data
         }
         public bool Prosecuted { get; set; }
         public bool Arrested { get; set; }
-        //public int CourtHearingID { get; set; }
-        //[ForeignKey("CourtHearingID")]
-        //public virtual CourtHearing CourtHearings{ get; set; }
-        //public int ConvictionID { get; set; }
-        //[ForeignKey("ConvictionID")]
-        //public virtual Conviction Convictions { get; set; }
     }
 }

@@ -73,7 +73,7 @@ namespace DefendantTracker.Services
                         BadgeID = entity.BadgeID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        FullName = entity.FullName,
+                        FullName = entity.OFullName,
                         DepartmentCity = entity.DepartmentCity,
                         DepartmentCounty = entity.DepartmentCounty,
                         DepartmentState = entity.DepartmentState,

@@ -8,7 +8,7 @@
     <h4>Here is a list of all the Convictions we are aware of currently.</h4>
     @Html.ActionLink("Add New Conviction", "Create")
 </p>
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ConvicID)
@@ -38,7 +38,7 @@
             @Html.DisplayNameFor(model => model.ArrestID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DefendantID)
+            @Html.DisplayNameFor(model => model.DFullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CourtHearingID)
@@ -46,53 +46,54 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.ConvicID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StreetAddress)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.City)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.County)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.State)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Zipcode)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DateOfConviction)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ConvictionSeverity)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ArrestID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DefendantID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CourtHearingID)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ConvicID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ConvicID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ConvicID })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConvicID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.County)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.State)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Zipcode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfConviction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConvictionSeverity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrestID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourtHearingID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ConvicID })
+                @Html.ActionLink("Details", "Details", new { id = item.ConvicID }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.ConvicID })
+            </td>
+        </tr>
+    }
 
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 

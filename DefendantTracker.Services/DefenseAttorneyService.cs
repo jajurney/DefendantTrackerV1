@@ -42,7 +42,7 @@ namespace DefendantTracker.Services
                                 DefenseAttorneyID = e.DefenseAttorneyID,
                                 FirstName = e.FirstName,
                                 LastName = e.LastName,
-                                FullName = e.FullName
+                                FullName = e.DAFullName
                             }
                     );
                 return query.ToArray();
@@ -61,7 +61,7 @@ namespace DefendantTracker.Services
                         DefenseAttorneyID = entity.DefenseAttorneyID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        FullName = entity.FullName
+                        FullName = entity.DAFullName
                     };
             }
         }

@@ -60,12 +60,16 @@ namespace DefendantTracker.Services
                                 CourtCounty = e.CourtCounty,
                                 CourtState = e.CourtState,
                                 CourtZipcode= e.CourtZipcode,
-                                StateAttorneyID = e.StateAttorneyID,
-                                DefenseAttorneyID = e.DefenseAttorneyID,
-                                OfficerID = e.OfficerID,
-                                DefendantID = e.DefendantID,
+                                FullLocation = e.FullLocation,
+                                StateAttorneyID = e.StateAttorneys.StateAttorneyID,
+                                SAFullName= e.StateAttorneys.SAFullName,
+                                DefenseAttorneyID = e.DefenseAttorneys.DefenseAttorneyID,
+                                DAFullName = e.DefenseAttorneys.DAFullName,
+                                OfficerID = e.Officers.OfficerID,
+                                OFullName = e.Officers.OFullName,
+                                DefendantID = e.Defendants.DefendantID,
+                                DFullName = e.Defendants.DFullName,
                                 ArrestID = e.ArrestID
-
                             }
                     );
                 return query.ToArray();

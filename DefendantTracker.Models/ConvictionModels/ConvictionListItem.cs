@@ -39,6 +39,8 @@ namespace DefendantTracker.Models.ConvictionModels
         public int ArrestID { get; set; }
         [Display(Name = "Defendant Id:")]
         public int DefendantID { get; set; }
+        [Display(Name = "Defendant Name:")]
+        public string DFullName { get; set; }
         [Display(Name = "Court Hearing Id:")]
         public int CourtHearingID { get; set; }
 

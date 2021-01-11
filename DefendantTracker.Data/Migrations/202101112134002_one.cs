@@ -36,7 +36,7 @@ namespace DefendantTracker.Data.Migrations
                         DefendantID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(),
                         LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
+                        DFullName = c.String(nullable: false),
                         StreetAddress = c.String(nullable: false),
                         City = c.String(nullable: false),
                         County = c.String(nullable: false),
@@ -56,7 +56,7 @@ namespace DefendantTracker.Data.Migrations
                         BadgeID = c.Int(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
+                        OFullName = c.String(nullable: false),
                         DepartmentCity = c.String(nullable: false),
                         DepartmentCounty = c.String(nullable: false),
                         DepartmentState = c.String(nullable: false),
@@ -129,7 +129,7 @@ namespace DefendantTracker.Data.Migrations
                         DefenseAttorneyID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
+                        DAFullName = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.DefenseAttorneyID);
             
@@ -140,7 +140,7 @@ namespace DefendantTracker.Data.Migrations
                         StateAttorneyID = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
+                        SAFullName = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.StateAttorneyID);
             

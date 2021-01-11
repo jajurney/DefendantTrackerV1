@@ -44,13 +44,13 @@ namespace DefendantTracker.Data
         public ConvictionSeverity ConvictionSeverity { get; set; }
         public int ArrestID { get; set; }
         [ForeignKey("ArrestID")]
-        public virtual Arrest Arrest { get; set; }
+        public virtual Arrest Arrests { get; set; }
         public int DefendantID { get; set; }
         [ForeignKey("DefendantID")]
-        public virtual Defendant Defendant { get; set; }
+        public virtual Defendant Defendants { get; set; }
         public int CourtHearingID { get; set; }
         [ForeignKey("CourtHearingID")]
-        public virtual CourtHearing CourtHearing { get; set; }
+        public virtual CourtHearing CourtHearings { get; set; }
     }
    
 }

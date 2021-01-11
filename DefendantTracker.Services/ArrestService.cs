@@ -55,8 +55,14 @@ namespace DefendantTracker.Services
                                 ArrestState = e.ArrestState,
                                 ArrestZipcode = e.ArrestZipcode,
                                 ArrestDesc = e.ArrestDesc,
-                                DefendantID = e.DefendantID,
-                                OfficerID = e.OfficerID
+                                DefendantID = e.Defendants.DefendantID,
+                                DFullName = e.Defendants.DFullName,
+                                FullLocation = e.Defendants.FullLocation,
+                                OfficerID = e.Officers.OfficerID,
+                                BadgeID = e.Officers.BadgeID,
+                                OFullName= e.Officers.OFullName,
+                                DepartmentName = e.Officers.DepartmentName,
+                                DepartmentLocation = e.Officers.DepartmentLocation
                             }
                     );
                 return query.ToArray();

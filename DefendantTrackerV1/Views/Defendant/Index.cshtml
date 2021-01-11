@@ -18,7 +18,7 @@
         @TempData["SaveResult"]
     </div>
 }
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.DefendantID)
@@ -89,8 +89,8 @@
                 @Html.DisplayFor(modelItem => item.Arrested)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.DefendantID }) ||
-                @Html.ActionLink("Details", "Details", new { id = item.DefendantID }) ||
+                @Html.ActionLink("Edit", "Edit", new { id = item.DefendantID })
+                @Html.ActionLink("Details", "Details", new { id = item.DefendantID })
                 @Html.ActionLink("Delete", "Delete", new { id = item.DefendantID })
 
             </td>
@@ -100,7 +100,7 @@
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
    h3{

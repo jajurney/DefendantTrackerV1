@@ -8,7 +8,7 @@
     <h4>Here you will find a list of all the State Attorneys in our system.</h4>
     @Html.ActionLink("Add New State Attorney", "Create")
 </p>
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.StateAttorneyID)
@@ -25,32 +25,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.StateAttorneyID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FullName)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.StateAttorneyID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.StateAttorneyID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.StateAttorneyID })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StateAttorneyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.StateAttorneyID })
+                @Html.ActionLink("Details", "Details", new { id = item.StateAttorneyID })
+                @Html.ActionLink("Delete", "Delete", new { id = item.StateAttorneyID })
+            </td>
+        </tr>
+    }
 
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 

@@ -8,7 +8,7 @@
     <h4>Here is all of our Court Hearings.</h4>
     @Html.ActionLink("Add New Court Hearing", "Create")
 </p>
-<table class="table">
+<table class="table-responsive table pull-left">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CourtHearingID)
@@ -20,86 +20,68 @@
             @Html.DisplayNameFor(model => model.CourtDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CourtAddress)
+            @Html.DisplayNameFor(model => model.FullLocation)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CourtCity)
+            @Html.DisplayNameFor(model => model.SAFullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CourtCounty)
+            @Html.DisplayNameFor(model => model.DAFullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CourtState)
+            @Html.DisplayNameFor(model => model.OFullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CourtZipcode)
+            @Html.DisplayNameFor(model => model.DFullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StateAttorneyID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefenseAttorneyID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OfficerID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DefendantID)
+            @Html.DisplayNameFor(model => model.ArrestID)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtHearingID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HearingDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtCounty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourtZipcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StateAttorneyID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DefenseAttorneyID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OfficerID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DefendantID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.CourtHearingID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CourtHearingID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.CourtHearingID })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourtHearingID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HearingDesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CourtDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SAFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DAFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestID)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CourtHearingID })
+        @Html.ActionLink("Details", "Details", new { id = item.CourtHearingID })
+        @Html.ActionLink("Delete", "Delete", new { id = item.CourtHearingID })
+    </td>
+</tr>
     }
 
 </table>
 <style>
     table {
-        text-align: center;
+        text-align: left;
         font-size: 18px;
     }
 
