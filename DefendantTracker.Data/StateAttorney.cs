@@ -16,7 +16,7 @@ namespace DefendantTracker.Data
         [Required]
         public string LastName { get; set; }
         [Required]
-        public string FullName
+        public string SAFullName
         {
             get
             {

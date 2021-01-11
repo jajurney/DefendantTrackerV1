@@ -38,7 +38,7 @@
             @Html.DisplayNameFor(model => model.ArrestID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DefendantID)
+            @Html.DisplayNameFor(model => model.DFullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CourtHearingID)
@@ -77,14 +77,14 @@
                 @Html.DisplayFor(modelItem => item.ArrestID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DefendantID)
+                @Html.DisplayFor(modelItem => item.DFullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CourtHearingID)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ConvicID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.ConvicID }) |
+                @Html.ActionLink("Edit", "Edit", new { id = item.ConvicID })
+                @Html.ActionLink("Details", "Details", new { id = item.ConvicID }) 
                 @Html.ActionLink("Delete", "Delete", new { id = item.ConvicID })
             </td>
         </tr>

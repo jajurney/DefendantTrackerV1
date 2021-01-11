@@ -19,7 +19,7 @@
                 </button>
                 @Html.Partial("_LoginPartial")
 
-                @Html.ActionLink("Criminal Defense Tracking", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Criminal Defense Tracking", "Index", "Home", new { area = "" }, new { @class = "navbar-name" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -37,7 +37,7 @@
             </div>
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-element">
         @RenderBody()
         <hr />
         <footer>
@@ -57,16 +57,16 @@
 
     }
 
-    .navbar-brand {
-        color: #FAED26 !important;
-        font-size: 25px !important;
-        font-family: 'Agency FB' !important;
-        margin-top: 10px;
+    .navbar-name{
+        color: #FAED26;
+        font-size: 25px;
+        font-family: 'Agency FB' ;
+        margin-top: 20px;
     }
 
-    .body-content {
-        color: #FAED26 !important;
-        font-family: 'Agency FB' !important;
+    .body-element {
+        color: #FAED26;
+        font-family: 'Agency FB';
         background-color: #46344E;
         width: 1200px;
         background-image: url('../../IMAGES/b9cbabb1a1ce1b2366a6af878fff10f8.jpg')

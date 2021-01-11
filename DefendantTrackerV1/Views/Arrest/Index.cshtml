@@ -48,51 +48,81 @@
             @Html.DisplayNameFor(model => model.DefendantID)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.DFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullLocation)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.OfficerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BadgeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepartmentLocation)
         </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
+<tr>
+    <td>
 
-                @Html.DisplayFor(modelItem => item.ArrestID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StreetName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestCounty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestZipcode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrestDesc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DefendantID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OfficerID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID })|
-                @Html.ActionLink("Details", "Details", new { id = item.ArrestID })|
-                @Html.ActionLink("Delete", "Delete", new { id = item.ArrestID })
-            </td>
-        </tr>
+        @Html.DisplayFor(modelItem => item.ArrestID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StreetName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestCity)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestCounty)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestState)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestZipcode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ArrestDesc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DefendantID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.FullLocation)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OfficerID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BadgeID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.OFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DepartmentLocation)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ArrestID })
+        @Html.ActionLink("Details", "Details", new { id = item.ArrestID })
+        @Html.ActionLink("Delete", "Delete", new { id = item.ArrestID })
+    </td>
+</tr>
     }
 
 </table>

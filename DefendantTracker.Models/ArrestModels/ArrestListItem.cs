@@ -27,7 +27,19 @@ namespace DefendantTracker.Models.ArrestModels
         public string ArrestDesc { get; set; }
         [Display(Name = "Defendant Id:")]
         public int DefendantID { get; set; }
+        [Display(Name = "Defendant Name:")]
+        public string DFullName { get; set; }
+        [Display(Name = "Defendant Location:")]
+        public string FullLocation { get; set; }
         [Display(Name = "Officer Id:")]
         public int OfficerID { get; set; }
+        [Display(Name = "Badge Number:")]
+        public int BadgeID{ get; set; }
+        [Display(Name = "Officer Name:")]
+        public string OFullName { get; set; }
+        [Display(Name = "Department Name:")]
+        public string DepartmentName { get; set; }
+        [Display(Name = "Department Location:")]
+        public string DepartmentLocation { get; set; }
     }
 }

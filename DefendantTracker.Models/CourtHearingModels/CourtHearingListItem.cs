@@ -25,14 +25,31 @@ namespace DefendantTracker.Models.CourtHearingModels
         public string CourtState { get; set; }
         [Display(Name = "Zipcode:")]
         public int CourtZipcode { get; set; }
+        [Display(Name = "Address:")]
+        public string FullLocation
+        {
+            get
+            {
+                return CourtAddress + " " + CourtCity + " " + CourtCounty + " " + CourtState + " " + CourtZipcode;
+            }
+            set { }
+        }
         [Display(Name = "State Attorney Id:")]
         public int StateAttorneyID { get; set; }
+        [Display(Name = "State Attorney Name:")]
+        public string SAFullName { get; set; }
         [Display(Name = "Defense Attorney Id:")]
         public int DefenseAttorneyID { get; set; }
+        [Display(Name = "Defense Attorney Name:")]
+        public string DAFullName { get; set; }
         [Display(Name = "Officer Id:")]
         public int OfficerID { get; set; }
+        [Display(Name = "Officer Name:")]
+        public string OFullName{ get; set; }
         [Display(Name = "Defendant Id:")]
         public int DefendantID { get; set; }
+        [Display(Name = "Defendant Name:")]
+        public string DFullName { get; set; }
         [Display(Name = "Arrest Id:")]
         public int ArrestID { get; set; }
 

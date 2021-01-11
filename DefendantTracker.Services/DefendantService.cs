@@ -78,7 +78,7 @@ namespace DefendantTracker.Services
                         DefendantID = entity.DefendantID,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        FullName = entity.FullName,
+                        FullName = entity.DFullName,
                         StreetAddress = entity.StreetAddress,
                         City = entity.City,
                         County = entity.County,

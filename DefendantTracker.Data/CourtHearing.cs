@@ -37,18 +37,18 @@ namespace DefendantTracker.Data
         }
         public int StateAttorneyID { get; set; }
         [ForeignKey("StateAttorneyID")]
-        public virtual StateAttorney StateAttorney { get; set; }
+        public virtual StateAttorney StateAttorneys { get; set; }
         public int DefenseAttorneyID { get; set; }
         [ForeignKey("DefenseAttorneyID")]
-        public virtual DefenseAttorney DefenseAttorney { get; set; }
+        public virtual DefenseAttorney DefenseAttorneys { get; set; }
         public int OfficerID { get; set; }
         [ForeignKey("OfficerID")]
-        public virtual Officer Officer { get; set; }
+        public virtual Officer Officers { get; set; }
         public int DefendantID { get; set; }
         [ForeignKey("DefendantID")]
-        public virtual Defendant Defendant { get; set; }
+        public virtual Defendant Defendants { get; set; }
         public int ArrestID { get; set; }
         [ForeignKey("ArrestID")]
-        public virtual Arrest Arrest { get; set; }
+        public virtual Arrest Arrests { get; set; }
     }
 }

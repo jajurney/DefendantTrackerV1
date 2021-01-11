@@ -58,7 +58,8 @@ namespace DefendantTracker.Services
                                 DateOfConviction = e.DateOfConviction,
                                 ConvictionSeverity = e.ConvictionSeverity,
                                 ArrestID = e.ArrestID,
-                                DefendantID = e.DefendantID,
+                                DefendantID = e.Defendants.DefendantID,
+                                DFullName = e.Defendants.DFullName,
                                 CourtHearingID = e.CourtHearingID
                             }
                     );

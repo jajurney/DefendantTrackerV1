@@ -56,7 +56,7 @@ namespace DefendantTracker.Data.Migrations
                         BadgeID = c.Int(nullable: false),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        FullName = c.String(nullable: false),
+                        OFullName = c.String(nullable: false),
                         DepartmentCity = c.String(nullable: false),
                         DepartmentCounty = c.String(nullable: false),
                         DepartmentState = c.String(nullable: false),
