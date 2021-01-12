@@ -53,7 +53,7 @@ namespace DefendantTrackerV1.Controllers
             var detail = service.GetArrestById(id);
             var model = new ArrestEdit
             {
-                ArrestDate = detail.ArrestDate,
+                ArrestDate = DateTime.Now,
                 StreetName = detail.StreetName,
                 ArrestCity = detail.ArrestCity,
                 ArrestCounty = detail.ArrestCounty,

@@ -19,9 +19,11 @@ namespace DefendantTracker.Services
         }
         public bool CreateArrest(ArrestCreate model)
         {
-            var entity = new Arrest()
+           var localDateTime = DateTime.Now.ToString("MM/dd/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+        var entity = new Arrest()
             {
-                ArrestDate = DateTime.Now,
+                ArrestDate = DateTime.Parse(localDateTime),
                 StreetName = model.StreetName,
                 ArrestCity = model.ArrestCity,
                 ArrestCounty = model.ArrestCounty,

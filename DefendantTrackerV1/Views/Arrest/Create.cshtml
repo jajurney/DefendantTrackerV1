@@ -38,10 +38,9 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ArrestDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ArrestDate, "", new { @class = "text-danger" })
-               
             </div>
         </div>
-
+        
         <div class="form-group">
             @Html.LabelFor(model => model.StreetName, "Street Name:", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
