@@ -13,6 +13,7 @@ namespace DefendantTracker.Data
         [Key]
         public int ArrestID { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}")]
         public DateTime ArrestDate { get; set; }
         [Required]
         public string StreetName { get; set; }

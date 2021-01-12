@@ -13,7 +13,7 @@ namespace DefendantTracker.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202101112134002_one"; }
+            get { return "202101121819067_one"; }
         }
         
         string IMigrationMetadata.Source

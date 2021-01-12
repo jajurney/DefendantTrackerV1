@@ -23,7 +23,7 @@ namespace DefendantTracker.Services
             { 
                 CourtHearingID = model.CourtHearingID,
                 HearingDesc = model.HearingDesc,
-                CourtDate = model.CourtDate,
+                CourtDate = DateTime.Now,
                 CourtAddress = model.CourtAddress,
                 CourtCity = model.CourtCity,
                 CourtCounty = model.CourtCounty,
