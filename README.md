@@ -38,8 +38,8 @@ HTTPS: https://github.com/jajurney/DefendantTrackerV1.git
 
 SSH: git@github.com:jajurney/DefendantTrackerV1.git
 
-Website Deployment Link
-"AZURE LINK"
+#### Website Deployment Link
+https://defendanttrackerv1mvc.azurewebsites.net/
 ### Resources 
 * CSS 
   - https://teamtreehouse.com/community/adding-css-to-cshtml
